@@ -7,6 +7,7 @@ import {classNames} from "shared/lib/helpers/classNames/classNames";
 import { useTheme } from './providers/ThemeProvider';
 import {AboutPage} from "pages/AboutPage";
 import {MainPage} from "pages/MainPage";
+import {AppRouter} from "app/providers/router";
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 
@@ -20,10 +21,7 @@ const {toggleTheme,theme} = useTheme()
             <Link to={'/about'}>О сайте</Link>
             <button onClick={toggleTheme}>Переключить тему</button>
             <Suspense fallback={<div>Загрузка...</div>}>
-                <Routes>
-                    <Route path={'/about'} element={<AboutPage />} />
-                    <Route path={'/'} element={<MainPage />}/>
-                </Routes>
+                <AppRouter />
             </Suspense>
         </div>
     );
