@@ -8,6 +8,7 @@ import { useTheme } from './providers/ThemeProvider';
 import {AboutPage} from "pages/AboutPage";
 import {MainPage} from "pages/MainPage";
 import {AppRouter} from "app/providers/router";
+import Navbar from "../widgets/Navbar/ui/Navbar";
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 
@@ -17,12 +18,9 @@ const App = () => {
 const {toggleTheme,theme} = useTheme()
     return (
         <div className={classNames('app',{}, [theme])}>
-            <Link to={'/'}>Главная</Link>
-            <Link to={'/about'}>О сайте</Link>
+            <Navbar />
+            <AppRouter />
             <button onClick={toggleTheme}>Переключить тему</button>
-            <Suspense fallback={<div>Загрузка...</div>}>
-                <AppRouter />
-            </Suspense>
         </div>
     );
 };
