@@ -19,11 +19,13 @@ const App = () => {
 const {theme} = useTheme()
     return (
         <div className={classNames('app',{}, [theme])}>
-            <Navbar />
-            <div className="content-page">
-                <Sidebar />
-                <AppRouter />
-            </div>
+            <Suspense fallback=""> {/*суспенд для переводов подгрузки*/}
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     );
 };
