@@ -12,3 +12,14 @@
     //минимальная высота = высоте браузера
     min-height: 100vh;
 }
+
+
+.content-page {
+    display: flex; // для вывод рядом с sidebarom
+}
+
+//для того что б блок со страницей занимал все свободное пространство рядом с sidebarom
+.page-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+}
