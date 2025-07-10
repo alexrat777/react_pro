@@ -10,7 +10,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'ru',
-        debug: __IS_DEV__,  //в файле src/app/types/global.d.ts указать тип переменной
+        debug: __IS_DEV__, // в файле src/app/types/global.d.ts указать тип переменной
 
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
@@ -18,8 +18,7 @@ i18n
 
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
-        }
+        },
     });
-
 
 export default i18n;

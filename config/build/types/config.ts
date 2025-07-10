@@ -1,4 +1,3 @@
-
 export type BuildMode = 'production' | 'development';
 
 export interface BuildPaths {
@@ -19,5 +18,3 @@ export interface BuildOptions {
     isDev: boolean;
     port: number;
 }
-
-
