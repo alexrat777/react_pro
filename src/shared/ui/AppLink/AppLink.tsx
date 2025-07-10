@@ -30,7 +30,7 @@ const AppLink:FC<AppLinkProps> = (props) => {
             {...otherProps}
         >
             {children}
-              </Link>
+        </Link>
     );
 };
 
