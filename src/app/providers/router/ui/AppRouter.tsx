@@ -3,11 +3,10 @@ import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import React, { Suspense } from 'react';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
-import { useTranslation } from 'react-i18next';
+import { PageLoader } from 'widgets/PageLoader';
 
-const { t } = useTranslation();
 const AppRouter = () => (
-    <Suspense fallback={<div>{t('Загрузка...')}</div>}>
+    <Suspense fallback={<PageLoader />}>
         <Routes>
             {Object.values(routeConfig).map(({ element, path }) => ( // круглые скобки
                 <Route
