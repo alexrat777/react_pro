@@ -1,0 +1,26 @@
+import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import Button from 'shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
+import cls from './PageError.module.scss';
+
+interface PageErrorProps {
+    className?: string;
+}
+const PageError = (props:PageErrorProps) => {
+    const { t } = useTranslation();
+    const reloadPage = () => {
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+    };
+    const { className } = props;
+    return (
+        <div className={classNames(cls.Navbar, {}, [className])}>
+            <p>{t('Произошла непредвиденная ошибка')}</p>
+            <Button onClick={reloadPage}>
+                {t('Обновить страницу')}
+            </Button>
+        </div>
+    );
+};
+
+export default PageError;
