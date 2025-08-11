@@ -14,7 +14,7 @@ const PageError = (props:PageErrorProps) => {
     };
     const { className } = props;
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t('Произошла непредвиденная ошибка')}</p>
             <Button onClick={reloadPage}>
                 {t('Обновить страницу')}
