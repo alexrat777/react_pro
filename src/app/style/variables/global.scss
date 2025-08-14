@@ -15,4 +15,14 @@
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+
+    // Z - индексы
+    --modal-z-index: 10;
+
+    // Цвета
+    --overlay-color: rgba(0 0 0 / 60%);
+    --bg-color-modal-light: #e8e8ea;
+    --primary-color-modal-light: #0232c2;
+    --bg-color-modal-dark: #090949;
+    --primary-color-modal-dark: #04ff04;
 }

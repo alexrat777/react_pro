@@ -1,8 +1,6 @@
 import React, {
-    Suspense, useContext, useMemo, useState,
+    Suspense, useState,
 } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import './style/index.scss';
 import { MainPageAsync } from 'pages/MainPage/ui/MainPage.async';
 import { AboutPageAsync } from 'pages/AboutPage/ui/AboutPage.async';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';

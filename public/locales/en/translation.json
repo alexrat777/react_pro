@@ -7,5 +7,15 @@
   "Произошла непредвиденная ошибка": "An unexpected error occurred",
   "Обновить страницу": "Refresh page",
   "Создать ошибку": "Создать ошибку",
-  "сокрЯз": "EN"
+  "сокрЯз": "EN",
+  "Войти": "Login",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Accusamus adipisci aperiam assumenda at blanditiis consequatur cum dignissimos dolor dolores eum fugit id in iste magnam magni mollitia nesciunt nihil nobis numquam officia, officiis quidem reiciendis rerum soluta temporibus, totam ut": {
+      " Ad animi culpa debitis, deleniti dolore eius eos eum fugiat fugit nam officiis quasi, qui rem sed voluptatibus? Accusantium harum modi optio possimus ut voluptatum! Animi aperiam architecto atque consequuntur cupiditate deserunt, dolore ducimus est et, eum eveniet expedita, id labore minima necessitatibus nostrum numquam perferendis placeat quaerat quisquam quo repudiandae sunt": {
+        " Blanditiis eius eos numquam perferendis quisquam, repudiandae sunt": {
+          "": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aperiam assumenda at blanditiis consequatur cum dignissimos dolor dolores eum fugit id in iste magnam magni mollitia nesciunt nihil nobis numquam officia, officiis quidem reiciendis rerum soluta temporibus, totam ut. Ad animi culpa debitis, deleniti dolore eius eos eum fugiat fugit nam officiis quasi, qui rem sed voluptatibus? Accusantium harum modi optio possimus ut voluptatum! Animi aperiam architecto atque consequuntur cupiditate deserunt, dolore ducimus est et, eum eveniet expedita, id labore minima necessitatibus nostrum numquam perferendis placeat quaerat quisquam quo repudiandae sunt. Blanditiis eius eos numquam perferendis quisquam, repudiandae sunt."
+        }
+      }
+    }
+  }
 }
