@@ -43,7 +43,10 @@ export default {
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
-
+    // A set of global variables that need to be available in all test environments
+    globals: {
+        __IS_DEV__: true,
+    },
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -93,9 +96,6 @@ export default {
     // A path to a module which exports an async function
     // that is triggered once after all test suites
     // globalTeardown: undefined,
-
-    // A set of global variables that need to be available in all test environments
-    // globals: {},
 
     // The maximum number of workers used to run your tests.
     // Can be specified as % or a number. E.g., maxWorkers:
