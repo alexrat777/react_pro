@@ -11,6 +11,7 @@ interface ModalProps {
     children?: React.ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 const ANIMATION_DELAY = 300;
 const Modal = (props:ModalProps) => {
@@ -20,9 +21,14 @@ const Modal = (props:ModalProps) => {
         children,
         isOpen,
         onClose,
+        lazy,
     } = props;
     // для анимации закрытия, иначе модалка без задержки закроется
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+    useEffect(() => {
+        if (isOpen) setIsMounted(true);
+    }, [isOpen]);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const closeModal = useCallback(() => {
         if (onClose) {
@@ -54,6 +60,9 @@ const Modal = (props:ModalProps) => {
     const onContentclick = (e:React.MouseEvent) => {
         e.stopPropagation();
     };
+    if (lazy && !isMounted) {
+        return null;
+    }
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
