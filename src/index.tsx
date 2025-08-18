@@ -9,14 +9,14 @@ import './shared/config/i18n/i18n';
 
 // 1 шаг для router оборачиваем в <BrowserRouter> <App />
 render(
-    <BrowserRouter>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <StoreProvider>
+    <StoreProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <ThemeProvider>
                     <App />
-                </StoreProvider>
-            </ThemeProvider>
-        </ErrorBoundary>
-    </BrowserRouter>,
+                </ThemeProvider>
+            </ErrorBoundary>
+        </BrowserRouter>
+    </StoreProvider>,
     document.getElementById('root'),
 );

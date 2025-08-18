@@ -10,16 +10,6 @@
     color: var(--primary-color);
 }
 
-.Modal.light {
-    --primary-color-modal: var(--primary-color-modal-light);
-    --bg-color: var(--bg-color-modal-light);
-}
-
-.Modal.dark {
-    --primary-color: var(--primary-color-modal-dark);
-    --bg-color: var(--bg-color-modal-dark);
-}
-
 .content {
     padding: 20px;
     border-radius: 12px;
