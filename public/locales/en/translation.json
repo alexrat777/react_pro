@@ -20,6 +20,9 @@
   },
   "increment": "increment",
   "decrement": "decrement",
-  "Введите логин": "Введите логин",
-  "Введите пароль": "Введите пароль"
+  "Введите логин": "Enter login",
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "Incorrect login or password",
+  "Выйти": "Выйти"
 }

@@ -1,20 +1,28 @@
 import React, {
-    Suspense, useState,
+    Suspense, useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useTheme } from './providers/ThemeProvider';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 
 const App = () => {
     const { theme } = useTheme();
+
+    // инициализация авторизации из локалстораджа
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
+
     return (
-        <div className={classNames('app', {}, [])}>
+        <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
-                {' '}
                 {/* суспенд для переводов подгрузки */}
                 <Navbar />
                 <div className="content-page">
