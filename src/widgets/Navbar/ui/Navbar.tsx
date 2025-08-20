@@ -11,7 +11,7 @@ interface NavbarProps {
     className?: string;
 }
 
-const Navbar = (props:NavbarProps) => {
+export const Navbar = (props:NavbarProps) => {
     const { className } = props;
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -44,12 +44,12 @@ const Navbar = (props:NavbarProps) => {
             <Button className={cls.links} theme={ButtonTheme.CLEAR_INVERTED} onClick={onOpenModal}>
                 {t('Войти')}
             </Button>
-            <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     );
 };
-
-export default Navbar;
