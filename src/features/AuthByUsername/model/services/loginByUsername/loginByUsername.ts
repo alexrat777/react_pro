@@ -13,7 +13,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, {rej
         try {
             const response = await axios.post('http://localhost:8000/login', authData);
             if (!response.data) {
-                return new Error();
+                throw new Error();
             }
             const user = response.data;
             delete user.password;
