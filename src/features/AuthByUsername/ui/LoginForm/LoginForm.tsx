@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import Button, { ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import Input from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import DynamicModuleLoader, { ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { getLoginUserName } from '../../model/selectors/getLoginUserName/getLoginUserName';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
@@ -16,14 +17,15 @@ import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess?: () => void;
 }
 const initialReducers: ReducersList = { // постоянный не будет пересчитывать и перересовка лишняя
     loginForm: loginReducer,
 };
 const LoginForm = memo((props:LoginFormProps) => {
-    const { className } = props;
+    const { className, onSuccess } = props;
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onChangeUsername = useCallback((value:string) => {
         // деспатчим экшен изменения значения username стейта логин формы
@@ -40,9 +42,10 @@ const LoginForm = memo((props:LoginFormProps) => {
     const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginIsLoading);
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, password, username]);
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus === 'fulfilled') onSuccess();
+    }, [dispatch, password, username, onSuccess]);
     return (
         <DynamicModuleLoader
             removeAfterUnmount
