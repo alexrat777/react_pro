@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import React, {
     useCallback, useEffect, useRef, useState,
 } from 'react';
@@ -53,7 +53,7 @@ const Modal = (props:ModalProps) => {
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

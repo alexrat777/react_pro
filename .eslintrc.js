@@ -46,9 +46,11 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error', // проверка хуков
         'react-hooks/exhaustive-deps': 'error', // проверка зависимостей в хуках
         'no-param-reassign': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {

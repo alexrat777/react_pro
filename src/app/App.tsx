@@ -13,7 +13,6 @@ import { userActions } from 'entities/User';
 
 const App = () => {
     const { theme } = useTheme();
-
     // инициализация авторизации из локалстораджа
     const dispatch = useDispatch();
     useEffect(() => {

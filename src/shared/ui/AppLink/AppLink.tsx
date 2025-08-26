@@ -19,7 +19,7 @@ interface AppLinkProps {
 
 const AppLink = memo((props:AppLinkProps) => {
     const {
-        to,
+        to = '/',
         className,
         children,
         theme = AppLinkThem.PRIMARY,
