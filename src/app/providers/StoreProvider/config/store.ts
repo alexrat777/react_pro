@@ -4,8 +4,8 @@ import { To } from 'react-router-dom';
 import { NavigateOptions } from 'react-router';
 import { $api } from 'shared/api/api';
 import { CombinedState, Reducer } from 'redux';
-import { counterReducer } from '../../../../entities/Counter';
-import { userReducer } from '../../../../entities/User';
+import { counterReducer } from 'entity/Counter';
+import { userReducer } from 'entity/User';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(

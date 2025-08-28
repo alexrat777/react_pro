@@ -7,7 +7,7 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { userActions } from 'entity/User';
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 

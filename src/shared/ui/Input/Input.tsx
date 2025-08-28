@@ -1,15 +1,16 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import {
     InputHTMLAttributes, memo, useState, ChangeEvent, SyntheticEvent, useEffect, useRef,
 } from 'react';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' |'readOnly'>
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     autoFocus?: boolean;
+    readOnly?: boolean;
 }
 
 const Input = memo((props:InputProps) => {
@@ -20,6 +21,7 @@ const Input = memo((props:InputProps) => {
         placeholder,
         type = 'text',
         autoFocus,
+        readOnly,
         ...otherProps
     } = props;
     const ref = useRef<HTMLInputElement>(null);
@@ -31,6 +33,7 @@ const Input = memo((props:InputProps) => {
     const onFocus = () => {
         setIsFocused(true);
     };
+    const isCaretVisible = isFocused && !readOnly;
     useEffect(() => {
         if (autoFocus) {
             setIsFocused(true);
@@ -44,8 +47,11 @@ const Input = memo((props:InputProps) => {
     const onSelect = (e:SyntheticEvent<HTMLInputElement>) => {
         setCaretPosition((e?.target as HTMLInputElement)?.selectionStart || 0);
     };
+    const mods: Mods = {
+        [cls.readOnly]: readOnly,
+    };
     return (
-        <div className={classNames(cls.InputWrapper, {}, [className])}>
+        <div className={classNames(cls.InputWrapper, mods, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>
                     {`${placeholder}>`}
@@ -61,9 +67,10 @@ const Input = memo((props:InputProps) => {
                     onBlur={onBlur}
                     onFocus={onFocus}
                     onSelect={onSelect}
+                    readOnly={readOnly}
                     {...otherProps}
                 />
-                {isFocused && (
+                {isCaretVisible && (
                     <span
                         className={cls.caret}
                         style={{ left: `${caretPosition * 9}px` }}
