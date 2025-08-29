@@ -9,7 +9,7 @@ export const ValidateProfileData = (profile?:Profile) => {
     } = profile;
 
     const errors: ValidateProfileError[] = [];
-    if (!first || lastname) {
+    if (!first || !lastname) {
         errors.push(ValidateProfileError.INCORRECT_USER_DATA);
     }
     if (!age || age < 5 || !Number.isInteger(age)) {

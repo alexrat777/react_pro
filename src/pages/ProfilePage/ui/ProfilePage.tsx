@@ -50,7 +50,9 @@ const ProfilePage = memo((props:ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_USER_AGE]: t('Некорректный возраст'),
     };
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     // функции для изменения полей формы
