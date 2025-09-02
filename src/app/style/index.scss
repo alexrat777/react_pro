@@ -2,16 +2,16 @@
 @import "variables/global";
 @import "themes/normal";
 @import "themes/dark";
+@import "themes/orange";
 
-body {
+.app,
+.app_modal {
     font: var(--font-m);
     color: var(--primary-color);
 }
 
 .app {
     background: var(--bg-color);
-
-    // минимальная высота = высоте браузера
     min-height: 100vh;
 }
 
