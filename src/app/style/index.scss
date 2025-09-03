@@ -16,10 +16,9 @@
 }
 
 .content-page {
-    display: flex; // для вывод рядом с sidebarom
+    display: flex;
 }
 
-// для того что б блок со страницей занимал все свободное пространство рядом с sidebarom
 .page-wrapper {
     flex-grow: 1;
     padding: 20px;
