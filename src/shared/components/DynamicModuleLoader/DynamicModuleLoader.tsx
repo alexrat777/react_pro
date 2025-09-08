@@ -13,7 +13,7 @@ interface DynamicModuleLoaderProps {
 }
 
 type ReducerListEntry =[StateSchemaKey, Reducer];
-
+// для динамического добавления в стору стейта
 const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
     const {
         children,

@@ -10,10 +10,12 @@ import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entity/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions } from 'react-router';
+import { ArticleDetailsSchema } from 'entity/Article';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    articleDetails?: ArticleDetailsSchema;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
