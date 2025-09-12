@@ -69,7 +69,9 @@ export const AricleDetails = memo((props: AricleDetailsProps) => {
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') dispatch(fetchArticleById(id));
     }, [dispatch, id]);
+
     let content;
+
     if (isLoading) {
         content = (
             <>

@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from '../../types/article';
 
