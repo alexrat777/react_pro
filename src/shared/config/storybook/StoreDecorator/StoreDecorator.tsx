@@ -4,11 +4,15 @@ import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { profileReducer } from 'entity/Profile';
 import { articleDetailsReducer } from 'entity/Article/model/slice/articleDetailsSlice';
+import { addCommentsFormReducer } from 'features/addCommentForm/model/slice/addCommentsFormSlice';
+import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
+    addCommentForm: addCommentsFormReducer,
+    articleDetailsComments: articleDetailsCommentsReducer,
 };
 
 export const StoreDecorator = (

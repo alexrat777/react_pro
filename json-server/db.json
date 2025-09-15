@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleID": "1",
+      "userId": "1",
+      "text": "Первый комментарий",
+      "id": "ZaAQiMD"
+    },
+    {
+      "articleID": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "KUntehS"
+    },
+    {
+      "articleID": "1",
+      "userId": "2",
+      "text": "4535fg",
+      "id": "QjFLb58"
+    },
+    {
+      "articleID": "1",
+      "userId": "2",
+      "text": "Привет",
+      "id": "785gChH"
     }
   ],
   "users": [
@@ -118,14 +144,28 @@
       "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
     }
   ],
-  "profile": {
-    "first": "Alex",
-    "lastname": "Lex",
-    "age": 40,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Samara",
-    "username": "admin",
-    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKgMZNV7v0zJijn1YXQKPFO8hn_-Fr4d94uGbxXPk09YiShJf4=s288-c-no"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Alex",
+      "lastname": "Lex",
+      "age": 40,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Samara",
+      "username": "admin",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKgMZNV7v0zJijn1YXQKPFO8hn_-Fr4d94uGbxXPk09YiShJf4=s288-c-no"
+    },
+    {
+      "id": "2",
+      "first": "User",
+      "lastname": "User1",
+      "age": 20,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Samara",
+      "username": "user",
+      "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
+    }
+  ]
 }

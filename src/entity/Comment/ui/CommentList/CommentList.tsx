@@ -15,11 +15,20 @@ interface CommentListProps {
 export const CommentList = memo((props: CommentListProps) => {
     const { className, comments, isLoading } = props;
     const { t } = useTranslation();
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.CommentList, {}, [className])}>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        );
+    }
     return (
         <div className={classNames(cls.CommentList, {}, [className])}>
             {comments?.length
                 ? comments.map((comment) => (
-                    <CommentCard isLoading={isLoading} className={cls.comment} comment={comment} />
+                    <CommentCard isLoading={isLoading} className={cls.comment} comment={comment} key={comment.id} />
                 ))
                 : <Text text={t('Комментарии отсутствуют')} />}
         </div>

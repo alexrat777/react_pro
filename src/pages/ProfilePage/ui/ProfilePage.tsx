@@ -20,6 +20,8 @@ import {
     getProfileValidateErrors,
 } from 'entity/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -38,6 +40,7 @@ const ProfilePage = memo((props:ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
     const validationErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{id:string}>();
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
         [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
@@ -49,11 +52,9 @@ const ProfilePage = memo((props:ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
         [ValidateProfileError.INCORRECT_USER_AGE]: t('Некорректный возраст'),
     };
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => {
+        if (id) dispatch(fetchProfileData(id));
+    });
 
     // функции для изменения полей формы
     const onChangeFirstname = useCallback((value?: string) => {
