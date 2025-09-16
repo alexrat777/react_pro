@@ -126,6 +126,12 @@
       "userId": "2",
       "text": "Привет",
       "id": "785gChH"
+    },
+    {
+      "articleID": "1",
+      "userId": "1",
+      "text": "коммент через ресетект",
+      "id": "BUDFttl"
     }
   ],
   "users": [

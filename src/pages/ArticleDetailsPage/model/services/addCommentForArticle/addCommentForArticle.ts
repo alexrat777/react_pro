@@ -3,6 +3,9 @@ import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { getUserAuthData } from 'entity/User';
 import { Comment } from 'entity/Comment';
 import { getArticleDetailsData } from 'entity/Article/model/selectors/selectors/articleDetails';
+import {
+    getUserAndArticleData,
+} from 'pages/ArticleDetailsPage/model/selectors/getUserAndArticleData/getUserAndArticleData';
 import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId';
 
 export const addCommentForArticle = createAsyncThunk<
@@ -15,8 +18,9 @@ export const addCommentForArticle = createAsyncThunk<
         const {
             extra, dispatch, rejectWithValue, getState,
         } = thunkAPI; // получение тейта
-        const userData = getUserAuthData(getState());
-        const article = getArticleDetailsData(getState());
+        // const userData = getUserAuthData(getState());
+        // const article = getArticleDetailsData(getState());
+        const { userData, article } = getUserAndArticleData(getState()); // соединение 2 селекторов в 1 через реселект
         if (!userData || !text || !article) {
             return rejectWithValue('no data');
         }
