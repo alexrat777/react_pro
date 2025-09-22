@@ -5,7 +5,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { getProfileData, getProfileReadonly, updateProfileData } from 'entity/Profile';
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { profileActions } from 'entity/Profile/model/slice/profileSlice';
 import { getUserAuthData } from 'entity/User';
 import cls from './ProfilePageHeader.module.scss';

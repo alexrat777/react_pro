@@ -27,7 +27,7 @@ const Sidebar = memo((props:SidebarProps) => {
         />
     )), [SidebarItemList, collapsed]);
     return (
-        <div
+        <menu
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
@@ -51,7 +51,7 @@ const Sidebar = memo((props:SidebarProps) => {
                     short={collapsed}
                 />
             </div>
-        </div>
+        </menu>
     );
 });
 

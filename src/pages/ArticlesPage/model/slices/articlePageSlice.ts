@@ -25,7 +25,8 @@ const articlePageSlice = createSlice({
             ids: [],
             entities: {},
             view: ArticleView.SMALL, // тут можно сразу проинициализировать из локал стораджа
-
+            page: 1,
+            hasMore: true,
         },
     ),
     reducers: {
@@ -33,8 +34,13 @@ const articlePageSlice = createSlice({
             state.view = action.payload;
             localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload);
         },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = Number(action.payload);
+        },
         initState: (state) => {
-            state.view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            state.view = view;
+            state.limit = view === ArticleView.BIG ? 4 : 9;
         },
     },
     extraReducers: (builder) => {
@@ -47,7 +53,9 @@ const articlePageSlice = createSlice({
                 fetchArticleList.fulfilled,
                 (state, action:PayloadAction<Article[]>) => {
                     state.isLoading = false;
-                    articlesAdapter.setAll(state, action.payload); // тут меняем если адаптел с   state.data = action.payload;
+                    // addMany для добавления в конец для безконечного скролла
+                    articlesAdapter.addMany(state, action.payload); // тут меняем если адаптел с state.data = action.payload на setAll
+                    state.hasMore = action.payload.length > 0;
                 },
             )
             .addCase(fetchArticleList.rejected, (state, action) => {
