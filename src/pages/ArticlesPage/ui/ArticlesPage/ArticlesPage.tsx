@@ -7,14 +7,13 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { fetchArticleList } from '../../model/services/fetchArticleList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
 import cls from './ArticlesPage.module.scss';
 import { articlePageActions, articlePageReducer, getArticles } from '../../model/slices/articlePageSlice';
 import {
+    getArticlesPageError,
     getArticlesPageIsLoading,
-    getArticlesPageError, getArticlesPageHasMore,
-    getArticlesPageNum,
     getArticlesPageView,
 } from '../../model/selectors/articlePageSelectors';
 
@@ -31,22 +30,22 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const articles = useSelector(getArticles.selectAll);
     const error = useSelector(getArticlesPageError);
     const isLoading = useSelector(getArticlesPageIsLoading);
-    const page = useSelector(getArticlesPageNum);
     const view = useSelector(getArticlesPageView);
-    const hasMore = useSelector(getArticlesPageHasMore);
     const dispatch = useAppDispatch();
+
     const onChangeView = useCallback((view:ArticleView) => {
         dispatch(articlePageActions.setView(view));
     }, [dispatch]);
+
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
+
     useInitialEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticleList({ page: 1 }));
+        dispatch(initArticlePage());
     });
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticlesPage, {}, [className])} onScrollEnd={onLoadNextPart}>
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList

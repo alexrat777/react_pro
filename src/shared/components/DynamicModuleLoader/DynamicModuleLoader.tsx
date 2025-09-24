@@ -25,9 +25,18 @@ const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getMountedReducers();
+        // const mountedReducers_ = store.reducerManager.getReducerMap();
         Object.entries(reducers).forEach(([name, reducer]) => {
-            store.reducerManager.add(name as StateSchemaKey, reducer);
-            dispatch({ type: `@INIT ${name} reducer` });
+            const mounted = mountedReducers[name as StateSchemaKey];
+            // const mounted_ = mountedReducers_[name as StateSchemaKey];
+
+            // добавляем если не смонтирован
+            // if (!mounted_) {  // можно было не создавать список смонтированных редюсеров
+            if (!mounted) {
+                store.reducerManager.add(name as StateSchemaKey, reducer);
+                dispatch({ type: `@INIT ${name} reducer` });
+            }
         });
 
         return () => {

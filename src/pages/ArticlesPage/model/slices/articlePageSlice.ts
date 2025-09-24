@@ -6,10 +6,8 @@ import { ArticlePageSchema } from 'pages/ArticlesPage';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { fetchArticleList } from '../../model/services/fetchArticleList';
 
-type Book = { bookId: string; title: string }
-
 const articlesAdapter = createEntityAdapter<Article>({
-    // Assume IDs are stored in a field other than `book.id`
+
     selectId: (article) => article.id,
 });
 // селектор для работы с EntityAdapter
@@ -27,6 +25,7 @@ const articlePageSlice = createSlice({
             view: ArticleView.SMALL, // тут можно сразу проинициализировать из локал стораджа
             page: 1,
             hasMore: true,
+            _inited: false,
         },
     ),
     reducers: {
@@ -41,6 +40,7 @@ const articlePageSlice = createSlice({
             const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
+            state._inited = true;
         },
     },
     extraReducers: (builder) => {
