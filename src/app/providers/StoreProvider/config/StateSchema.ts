@@ -13,7 +13,7 @@ import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'entity/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticlePageSchema } from 'pages/ArticlesPage';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -25,19 +25,19 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
-    articlesPage?: ArticlePageSchema;
+    articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
-export type MountedRedusers = OptionalRecord<StateSchemaKey, boolean>;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
+
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
-
-    // true - вмонтирован, false  - демонтирован
-    getMountedReducers:() => MountedRedusers;
+    // true - вмонтирован, false - демонтирован
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

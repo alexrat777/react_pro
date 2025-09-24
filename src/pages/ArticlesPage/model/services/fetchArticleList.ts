@@ -11,7 +11,7 @@ export const fetchArticleList = createAsyncThunk<
     FetchArticlesProps,
     ThunkConfig<string>
 >(
-    'articleDetails/fetchCommentsByArticleId',
+    'articlesPage/fetchArticlesList', // корректный префикс обязателен!
     async (props, thunkAPI) => {
         const { extra, rejectWithValue, getState } = thunkAPI;
         const { page = 1 } = props;

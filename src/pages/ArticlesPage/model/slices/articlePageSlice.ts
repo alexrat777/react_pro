@@ -2,7 +2,7 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entity/Article';
-import { ArticlePageSchema } from 'pages/ArticlesPage';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { fetchArticleList } from '../../model/services/fetchArticleList';
 
@@ -16,7 +16,7 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
 );
 const articlePageSlice = createSlice({
     name: 'articlePage',
-    initialState: articlesAdapter.getInitialState<ArticlePageSchema>(
+    initialState: articlesAdapter.getInitialState<ArticlesPageSchema>(
         {
             isLoading: false,
             error: undefined,

@@ -3,17 +3,17 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from 'entity/Article';
 import { ArticleBlockType, ArticleType } from 'entity/Article/model/types/article';
-import { AricleDetails } from './AricleDetails';
+import { ArticleDetails } from './ArticleDetails';
 
 export default {
-    title: 'entities/AricleDetails',
-    component: AricleDetails,
+    title: 'entities/ArticleDetails',
+    component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof AricleDetails>;
+} as ComponentMeta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof AricleDetails> = (args) => <AricleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
 const article:Article = {
     id: '1',
     title: 'Javascript news',

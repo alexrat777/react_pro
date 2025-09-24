@@ -1,7 +1,5 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { createReducerManager } from 'app/providers/StoreProvider/config/reduserManager';
-import { To } from 'react-router-dom';
-import { NavigateOptions } from 'react-router';
+import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { $api } from 'shared/api/api';
 import { CombinedState, Reducer } from 'redux';
 import { counterReducer } from 'entity/Counter';

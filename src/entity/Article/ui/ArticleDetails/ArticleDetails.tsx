@@ -19,17 +19,17 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { fetchArticleById } from '../../model/services/fechArticleById/fetchArticleById';
-import cls from './AricleDetails.module.scss';
+import cls from './ArticleDetails.module.scss';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
-interface AricleDetailsProps {
+interface ArticleDetailsProps {
     className?: string;
     id: string;
 }
 const reducers:ReducersList = {
     articleDetails: articleDetailsReducer,
 };
-export const AricleDetails = memo((props: AricleDetailsProps) => {
+export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { className, id } = props;
     const { t } = useTranslation();
     const dispatch = useAppDispatch();

@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
-import { getUserAuthData } from 'entity/User';
 import { Comment } from 'entity/Comment';
-import { getArticleDetailsData } from 'entity/Article/model/selectors/selectors/articleDetails';
 import {
     getUserAndArticleData,
 } from 'pages/ArticleDetailsPage/model/selectors/getUserAndArticleData/getUserAndArticleData';
@@ -26,7 +24,7 @@ export const addCommentForArticle = createAsyncThunk<
         }
         try {
             const response = await extra.api.post<Comment>('/comments', {
-                articleID: article.id,
+                articleId: article.id,
                 userId: userData.id,
                 text,
             });
