@@ -9,7 +9,7 @@ export const initArticlePage = createAsyncThunk<
     void,
     ThunkConfig<string>
 >(
-    'articlePage/initArticlePage',
+    'articlesPage/initArticlesPage',
     async (_, thunkAPI) => {
         const {
             getState, dispatch,

@@ -1,5 +1,3 @@
-import { To } from 'react-router-dom';
-
 import { CounterSchema } from 'entity/Counter';
 import { UserSchema } from 'entity/User';
 import { LoginSchema } from 'features/AuthByUsername';
@@ -9,15 +7,16 @@ import {
 import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entity/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'entity/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollSaveSchema } from 'features/ScrollSave/model/types/ScrollSaveSchema';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scrollSave: ScrollSaveSchema;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
