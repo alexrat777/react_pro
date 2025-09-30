@@ -39,7 +39,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
+        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'target'] }],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
@@ -47,6 +47,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // проверка зависимостей в хуках
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'arrow-body-style': 'off',
     },
     globals: {
         __IS_DEV__: true,
