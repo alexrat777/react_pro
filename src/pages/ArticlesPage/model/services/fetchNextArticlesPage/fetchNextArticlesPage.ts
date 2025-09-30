@@ -6,7 +6,7 @@ import {
     getArticlesPageLimit, getArticlesPageNum,
 } from '../../selectors/articlePageSelectors';
 import { articlePageActions } from '../../slices/articlePageSlice';
-import { fetchArticleList } from '../fetchArticleList';
+import { fetchArticleList } from '../fetchArticleList/fetchArticleList';
 
 export const fetchNextArticlesPage = createAsyncThunk<
     void,
@@ -23,9 +23,7 @@ export const fetchNextArticlesPage = createAsyncThunk<
         const page = getArticlesPageNum(getState());
         if (hasMore && !isLoading) {
             dispatch(articlePageActions.setPage(page + 1));
-            dispatch(fetchArticleList({
-                page: page + 1,
-            }));
+            dispatch(fetchArticleList({}));
         }
     },
 );

@@ -1,10 +1,13 @@
 // сделано на основе https://redux-toolkit.js.org/api/createEntityAdapter    делаем адаптер для нормализации
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entity/Article';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import {
+    Article, ArticleSortField, ArticleType, ArticleView,
+} from 'entity/Article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
-import { fetchArticleList } from '../../model/services/fetchArticleList';
+import { SortOrder } from 'shared/types/sort';
+import { ArticlesPageSchema } from '../../model/types/ArticlesPageSchema';
+import { fetchArticleList } from '../services/fetchArticleList/fetchArticleList';
 
 const articlesAdapter = createEntityAdapter<Article>({
 
@@ -26,6 +29,10 @@ const articlePageSlice = createSlice({
             page: 1,
             hasMore: true,
             _inited: false,
+            sort: ArticleSortField.CREATED,
+            search: '',
+            order: 'asc',
+            type: ArticleType.ALL,
         },
     ),
     reducers: {
@@ -36,6 +43,18 @@ const articlePageSlice = createSlice({
         setPage: (state, action: PayloadAction<number>) => {
             state.page = Number(action.payload);
         },
+        setOrder: (state, action: PayloadAction<SortOrder>) => {
+            state.order = action.payload;
+        },
+        setSort: (state, action: PayloadAction<ArticleSortField>) => {
+            state.sort = action.payload;
+        },
+        setSearch: (state, action: PayloadAction<string>) => {
+            state.search = action.payload;
+        },
+        setType: (state, action: PayloadAction<ArticleType>) => {
+            state.type = action.payload;
+        },
         initState: (state) => {
             const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
             state.view = view;
@@ -45,17 +64,26 @@ const articlePageSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticleList.pending, (state) => {
+            .addCase(fetchArticleList.pending, (state, action) => {
                 state.error = undefined;
                 state.isLoading = true;
+
+                if (action.meta.arg.replace) {
+                    articlesAdapter.removeAll(state);
+                }
             })
             .addCase(
                 fetchArticleList.fulfilled,
-                (state, action:PayloadAction<Article[]>) => {
+                (state, action) => { // action:PayloadAction<Article[]> - убрали что б к meta доступ получить
                     state.isLoading = false;
                     // addMany для добавления в конец для безконечного скролла
-                    articlesAdapter.addMany(state, action.payload); // тут меняем если адаптел с state.data = action.payload на setAll
-                    state.hasMore = action.payload.length > 0;
+                    if (state.limit) state.hasMore = action.payload.length >= state.limit;
+                    // тут меняем если адаптел с state.data = action.payload на setAll
+                    if (action.meta.arg.replace) {
+                        articlesAdapter.setAll(state, action.payload);
+                    } else {
+                        articlesAdapter.addMany(state, action.payload);
+                    }
                 },
             )
             .addCase(fetchArticleList.rejected, (state, action) => {

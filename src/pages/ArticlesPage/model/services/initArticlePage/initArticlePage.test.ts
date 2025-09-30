@@ -1,8 +1,12 @@
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
+import { useSearchParams } from 'react-router-dom';
 import { initArticlePage } from './initArticlePage';
+
+jest.mock('./initArticlePage');
 
 describe('initArticlePage.test', () => {
     test('fetch init', async () => {
+        const [searchParams] = useSearchParams();
         const thunk = new TestAsyncThunk(initArticlePage, {
             articlesPage: {
                 isLoading: false,
@@ -14,11 +18,12 @@ describe('initArticlePage.test', () => {
 
             },
         });
-        await thunk.callThunk();
+        await thunk.callThunk(searchParams);
         expect(thunk.dispatch).toBeCalledTimes(4);
     });
 
     test(' fetch not init ', async () => {
+        const [searchParams] = useSearchParams();
         const thunk = new TestAsyncThunk(initArticlePage, {
             articlesPage: {
                 isLoading: false,
@@ -30,7 +35,7 @@ describe('initArticlePage.test', () => {
 
             },
         });
-        await thunk.callThunk();
+        await thunk.callThunk(searchParams);
         expect(thunk.dispatch).toBeCalledTimes(2);
     });
 });

@@ -1,8 +1,8 @@
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList';
+import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList';
 
-jest.mock('pages/ArticlesPage/model/services/fetchArticleList');
+jest.mock('pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList');
 describe('fetchProfileData.test', () => {
     test('success fetch', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
