@@ -1,6 +1,6 @@
 import { LoginSchema } from 'features/AuthByUsername';
-import { addCommentsFormActions, addCommentsFormReducer } from 'features/addCommentForm/model/slice/addCommentsFormSlice';
-import { AddCommentFormSchema } from 'features/addCommentForm';
+import { AddCommentFormSchema } from '../types/addCommentForm';
+import { addCommentsFormActions, addCommentsFormReducer } from '../slice/addCommentsFormSlice';
 
 describe('addCommentsFormSlice.test', () => {
     test('should set text comment', () => {

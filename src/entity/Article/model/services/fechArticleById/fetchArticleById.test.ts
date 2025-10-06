@@ -1,7 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { ArticleBlockType, ArticleType } from 'entity/Article/model/types/article';
-import { fetchArticleById } from 'entity/Article/model/services/fechArticleById/fetchArticleById';
+import { ArticleBlockType, ArticleType } from '../../types/article';
+import { fetchArticleById } from '../../services/fechArticleById/fetchArticleById';
 
 describe('fetchProfileData.test', () => {
     test('success fetch Article', async () => {

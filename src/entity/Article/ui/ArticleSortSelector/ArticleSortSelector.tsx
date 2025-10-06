@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
-import { ArticleSortField } from 'entity/Article';
 import { SortOrder } from 'shared/types/sort';
+import { ArticleSortField } from '../../model/types/article';
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {

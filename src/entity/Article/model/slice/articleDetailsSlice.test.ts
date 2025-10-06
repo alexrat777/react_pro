@@ -1,15 +1,7 @@
-import {
-    profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
-} from 'entity/Profile';
-import { Country } from 'entity/Country';
-import { Currency } from 'entity/Currency';
-import { ArticleBlockType, ArticleType } from 'entity/Article/model/types/article';
 import { LoginSchema } from 'features/AuthByUsername';
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
-import { ArticleDetailsSchema } from 'entity/Article';
-import { articleDetailsReducer } from 'entity/Article/model/slice/articleDetailsSlice';
-import { fetchArticleById } from 'entity/Article/model/services/fechArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { fetchArticleById } from '../../model/services/fechArticleById/fetchArticleById';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 
 describe('articleDetailsSlice.test', () => {
     test('test articleDetailsSlice.pending', () => {

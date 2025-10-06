@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { fetchArticleList } from 'pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList';
+import { fetchNextArticlesPage } from '../../services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { fetchArticleList } from '../../services/fetchArticleList/fetchArticleList';
 
 jest.mock('pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList');
 describe('fetchProfileData.test', () => {

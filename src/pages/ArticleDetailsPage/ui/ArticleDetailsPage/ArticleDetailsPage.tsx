@@ -10,13 +10,13 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { Page } from 'widgets/Page/Page';
 import { ArticleDetails, ArticleList } from 'entity/Article';
-import { getArticleDetailsCommentsIsLoadings } from 'pages/ArticleDetailsPage/model/selectors/getComments/comments';
 import {
     getArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/slice/articleDetailsRecommendationsSlice';
+} from '../../model/slice/articleDetailsRecommendationsSlice';
 import {
     getArticleDetailsRecommendationsIsLoadings,
-} from 'pages/ArticleDetailsPage/model/selectors/getRecommendations/recommendations';
+} from '../../model/selectors/getRecommendations/recommendations';
+import { getArticleDetailsCommentsIsLoadings } from '../../model/selectors/getComments/comments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
 import {
