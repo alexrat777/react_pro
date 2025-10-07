@@ -40,7 +40,10 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'target'] }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: ['to', 'data-testid', 'target', 'justify', 'align', 'direction', 'gap'],
+        }],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',

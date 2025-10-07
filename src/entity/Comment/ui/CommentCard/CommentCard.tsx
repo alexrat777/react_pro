@@ -7,6 +7,7 @@ import AvatarImgDefault from 'shared/assets/icons/user-32-32.png';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { VStack } from 'shared/ui/Stack';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 
@@ -25,18 +26,18 @@ export const CommentCard = memo((props: CommentCardProps) => {
     const { t } = useTranslation();
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCard, {}, [className, cls.isLoading])}>
+            <VStack gap="8" max className={classNames(cls.CommentCard, {}, [className, cls.isLoading])}>
                 <div className={cls.header}>
                     <Skeleton height={30} width={30} borderRadius="50%" />
                     <Skeleton className={cls.username} height={16} width={100} />
                 </div>
                 <Skeleton className={cls.text} width="100%" height="50px" />
-            </div>
+            </VStack>
         );
     }
     if (!comment) return null;
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
+        <VStack gap="8" max className={classNames(cls.CommentCard, {}, [className])}>
             <AppLink to={RoutePath.profile + comment.user.id} className={cls.header}>
                 {comment.user.avatar
                     ? <Avatar size={30} src={comment.user.avatar} />
@@ -44,6 +45,6 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 <Text className={cls.username} title={comment.user.username} />
             </AppLink>
             <Text className={cls.text} text={comment.text} />
-        </div>
+        </VStack>
     );
 });
