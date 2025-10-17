@@ -1,17 +1,14 @@
 // import { classNames } from 'shared/lib/helpers/classNames/classNames';
 // import { useTranslation } from 'react-i18next';
-import {
-    Fragment, memo, ReactNode, useState,
-} from 'react';
+import { Fragment, memo, ReactNode } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
 import CheckIcon from 'shared/assets/icons/check-mark.svg';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { DropdownDirection } from 'shared/types/ui';
 import { Button } from '../Button/Button';
 import { HStack } from '../Stack';
 import { Icon } from '../Icon/Icon';
 import cls from './ListBox.module.scss';
-
-type DropdownDirection = 'top' | 'bottom' ;
 
 export interface ListBoxItem{
     value: string;
@@ -29,13 +26,16 @@ interface ListBoxProps {
     direction?: DropdownDirection;
 }
 const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: cls.optionsBottom,
-    top: cls.optionsTop,
+    'bottom left': cls.optionsBottomLeft,
+    'bottom right': cls.optionsBottomRight,
+    'top left': cls.optionsTopLeft,
+    'top right': cls.optionsTopRight,
 };
 export const ListBox = memo((props:ListBoxProps) => {
     const {
-        className, items, value, defaultValue, onChange, label, readOnly, direction = 'bottom',
+        className, items, value, defaultValue, onChange, label, readOnly, direction = 'bottom right',
     } = props;
+    const optionsClasses = [mapDirectionClass[direction]];
     return (
         <HStack gap="4">
             {label && (
@@ -55,7 +55,7 @@ export const ListBox = memo((props:ListBoxProps) => {
                         {value ?? defaultValue}
                     </Button>
                 </HListbox.Button>
-                <HListbox.Options className={classNames(cls.options, {}, [mapDirectionClass[direction]])}>
+                <HListbox.Options className={classNames(cls.options, {}, optionsClasses)}>
                     {items?.map((item) => (
                         <HListbox.Option
                             key={item.value}
