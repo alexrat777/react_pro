@@ -3,7 +3,7 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
 import CheckIcon from 'shared/assets/icons/check-mark.svg';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 import { Button } from '../Button/Button';
 import { HStack } from '../Stack';
@@ -36,10 +36,13 @@ export const ListBox = memo((props:ListBoxProps) => {
         className, items, value, defaultValue, onChange, label, readOnly, direction = 'bottom right',
     } = props;
     const optionsClasses = [mapDirectionClass[direction]];
+    const mods: Mods = {
+        [cls.readOnly]: readOnly,
+    };
     return (
         <HStack gap="4">
             {label && (
-                <span className={cls.label}>
+                <span className={classNames('', mods, [])}>
                     {`${label}>`}
                 </span>
             )}

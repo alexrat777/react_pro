@@ -17,7 +17,7 @@ describe('fetchProfileData.test', () => {
         });
         await thunk.callThunk();
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticleList).toHaveBeenCalledWith({ page: 3 }); // fetchArticleList вызвался с параметрами {page: 3}
+        expect(fetchArticleList).toHaveBeenCalled(); // fetchArticleList вызвался с параметрами {page: 3}  - после рефактеринга убрали параметры берем из стейта
     });
 
     test(' fetchArticleList not called ', async () => {

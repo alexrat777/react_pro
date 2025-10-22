@@ -1,5 +1,4 @@
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
-import { updateProfileData } from 'entity/Profile';
 import { ArticleBlockType } from 'entity/Article/model/types/article';
 import { addCommentForArticle } from '../../services/addCommentForArticle/addCommentForArticle';
 // данные для стейта
