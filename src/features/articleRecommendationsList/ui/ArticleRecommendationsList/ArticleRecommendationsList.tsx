@@ -16,7 +16,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { className } = props;
     const { t } = useTranslation();
     const { isLoading, error, data: articles } = useArticleRecommendationsList(3);
-    if (isLoading || error) return null; // нормальные заглушки
+    if (isLoading || error || !articles) return null; // нормальные заглушки
     return (
         <VStack gap="8" className={classNames('', {}, [className])}>
             <Text
