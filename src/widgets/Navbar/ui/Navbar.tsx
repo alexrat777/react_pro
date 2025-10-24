@@ -4,7 +4,9 @@ import React, { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entity/User';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entity/User';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import AppLink, { AppLinkThem } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -22,6 +24,8 @@ export const Navbar = memo((props:NavbarProps) => {
     const dispatch = useDispatch();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
@@ -31,6 +35,8 @@ export const Navbar = memo((props:NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
+
+    const isAdminPanelAvailibale = isAdmin || isManager;
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -51,6 +57,11 @@ export const Navbar = memo((props:NavbarProps) => {
                     direction="bottom left"
                     className={cls.dropdown}
                     items={[
+                        // условное добавление в массив значение или не добавление js () для тернарного выражение нужны ... разварачивание массива в элементы
+                        ...(isAdminPanelAvailibale ? [{
+                            content: t('Админка'),
+                            href: RoutePath.admin_panel,
+                        }] : []),
                         {
                             content: t('Профиль'),
                             href: RoutePath.profile + authData.id,

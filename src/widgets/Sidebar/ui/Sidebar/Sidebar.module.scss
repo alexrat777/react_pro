@@ -24,6 +24,7 @@
     position: absolute;
     right: -32px;
     bottom: 32px;
+    z-index: var(--sidebar-z-index);
 }
 
 .items {

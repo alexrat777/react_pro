@@ -13,3 +13,5 @@ export {
 export {
     getUserInit,
 } from './model/selectors/getUserInit/getUserInit';
+
+export { getUserRoles, isUserAdmin, isUserManager } from './model/selectors/roleSelectors/roleSelectors';
