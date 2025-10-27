@@ -26,7 +26,7 @@ import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 const reducers:ReducersList = {
     articleDetails: articleDetailsReducer,

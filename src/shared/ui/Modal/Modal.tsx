@@ -49,7 +49,7 @@ const Modal = (props:ModalProps) => {
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
-            clearTimeout(timerRef.current);
+            if (timerRef.current) clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);

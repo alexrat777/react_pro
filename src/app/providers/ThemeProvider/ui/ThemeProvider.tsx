@@ -5,8 +5,9 @@ const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || T
 // 2 контекст сначала создается контекст провайдер
 interface ThemeProviderProps {
     initialTheme?: Theme;
+    children: React.ReactNode;
 }
-const ThemeProvider:FC<ThemeProviderProps> = (props) => {
+const ThemeProvider = (props:ThemeProviderProps) => {
     const { initialTheme, children } = props;
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
     //    useMemo нужно для оптимизации памяти меняется только когда теме меняется

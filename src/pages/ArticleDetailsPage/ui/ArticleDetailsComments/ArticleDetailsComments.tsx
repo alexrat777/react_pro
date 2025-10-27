@@ -1,22 +1,26 @@
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import {memo, Suspense, useCallback} from 'react';
 import Text, { TextSize } from 'shared/ui/Text/Text';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entity/Comment';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { VStack } from 'shared/ui/Stack';
+import {HStack, VStack} from 'shared/ui/Stack';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoadings } from '../../model/selectors/getComments/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import cls from "features/addCommentForm/ui/AddCommentForm/AddCommentForm.module.scss";
+import Input from "shared/ui/Input/Input";
+import {Button, ButtonTheme} from "shared/ui/Button/Button";
+import {Skeleton} from "shared/ui/Skeleton/Skeleton";
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -31,13 +35,23 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
+    const Skeletons = (
+        <HStack justify="between" gap={'8'} max className={classNames(cls.AddCommentForm, {}, [className])}>
+            <Skeleton width={'80%'} height={'30'} />
+            <Skeleton width={'110px'} height={'30'} />
+        </HStack>
+        );
+
+
     return (
         <VStack gap="16" max className={classNames('', {}, [className])}>
             <Text
                 size={TextSize.L}
                 title={t('Комментарии')}
             />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={Skeletons}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}
