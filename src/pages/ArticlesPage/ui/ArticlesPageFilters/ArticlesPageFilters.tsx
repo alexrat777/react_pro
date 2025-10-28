@@ -4,14 +4,13 @@ import { memo, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-    ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleSortField, ArticleTypeTabs,
+    ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
 } from 'entity/Article';
 import { Card } from 'shared/ui/Card/Card';
 import Input from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types/sort';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entity/Article/model/types/article';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { articlePageActions } from '../../model/slices/articlePageSlice';
 import {

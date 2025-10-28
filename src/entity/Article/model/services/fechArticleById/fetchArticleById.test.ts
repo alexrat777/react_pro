@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { ArticleBlockType, ArticleType } from '../../types/article';
+import { ArticleBlockType, ArticleType } from 'entity/Article/model/const/articleConst';
 import { fetchArticleById } from '../../services/fechArticleById/fetchArticleById';
 
 describe('fetchProfileData.test', () => {

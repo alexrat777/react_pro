@@ -1,10 +1,10 @@
-// import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
-// import { Dispatch } from 'react';
-// import { StateSchema } from 'app/providers/StoreProvider';
-// import { initArticlePage } from './initArticlePage';
-//
-// jest.mock('./initArticlePage');
-//
+import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
+import { Dispatch } from 'react';
+import { StateSchema } from 'app/providers/StoreProvider';
+import { initArticlePage } from './initArticlePage';
+
+jest.mock('./initArticlePage');
+
 // describe('initArticlePage.test', () => {
 //     let dispatch: Dispatch<any>;
 //     let getState: () => StateSchema;
