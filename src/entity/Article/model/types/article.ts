@@ -1,5 +1,5 @@
 import { User } from 'entity/User';
-import { ArticleBlockType, ArticleType } from 'entity/Article/model/const/articleConst';
+import { ArticleBlockType, ArticleType } from '../../model/const/articleConst';
 
 export interface ArticleBlockBase {
     id: string;

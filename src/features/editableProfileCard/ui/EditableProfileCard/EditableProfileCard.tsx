@@ -10,7 +10,7 @@ import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { ProfileCard } from 'entity/Profile';
 import DynamicModuleLoader, { ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
-import { ValidateProfileError } from 'features/editableProfileCard/model/const/constProfile';
+import { ValidateProfileError } from '../../model/const/constProfile';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
