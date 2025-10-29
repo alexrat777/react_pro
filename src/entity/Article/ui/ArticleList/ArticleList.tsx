@@ -14,7 +14,6 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView,
     target?:HTMLAttributeAnchorTarget;
-
 }
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
     .fill(null)
