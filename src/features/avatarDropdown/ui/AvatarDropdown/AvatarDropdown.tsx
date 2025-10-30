@@ -8,7 +8,6 @@ import {
 } from 'entity/User';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import cls from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -30,7 +29,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     return (
         <Dropdown
             direction="bottom left"
-            className={classNames(cls.AvatarDropdown, {}, [className])}
+            className={classNames('', {}, [className])}
             items={[
                 // условное добавление в массив значение или не добавление js () для тернарного выражение нужны ... разварачивание массива в элементы
                 ...(isAdminPanelAvailibale ? [{
