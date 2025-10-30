@@ -5,10 +5,12 @@ import { Listbox as HListbox } from '@headlessui/react';
 import CheckIcon from 'shared/assets/icons/check-mark.svg';
 import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import { Button } from '../Button/Button';
-import { HStack } from '../Stack';
-import { Icon } from '../Icon/Icon';
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { Icon } from '../../../Icon/Icon';
 import cls from './ListBox.module.scss';
+import { mapDirectionClass } from '../../styles/const';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem{
     value: string;
@@ -25,19 +27,14 @@ interface ListBoxProps {
     readOnly?: boolean;
     direction?: DropdownDirection;
 }
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top left': cls.optionsTopLeft,
-    'top right': cls.optionsTopRight,
-};
+
 export const ListBox = memo((props:ListBoxProps) => {
     const {
         className, items, value, defaultValue, onChange, label, readOnly, direction = 'bottom right',
     } = props;
     const optionsClasses = [mapDirectionClass[direction]];
     const mods: Mods = {
-        [cls.readOnly]: readOnly,
+        [popupCls.disabled]: readOnly,
     };
     return (
         <HStack gap="4">
@@ -49,11 +46,11 @@ export const ListBox = memo((props:ListBoxProps) => {
             <HListbox
                 disabled={readOnly}
                 as="div"
-                className={classNames(cls.ListBox, {}, [className])}
+                className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
                 value={value}
                 onChange={onChange}
             >
-                <HListbox.Button className={cls.trigger} disabled={readOnly}>
+                <HListbox.Button className={popupCls.trigger} disabled={readOnly}>
                     <Button disabled={readOnly}>
                         {value ?? defaultValue}
                     </Button>
@@ -70,8 +67,8 @@ export const ListBox = memo((props:ListBoxProps) => {
                             {({ active, selected }) => (
                                 <li
                                     className={classNames(cls.item, {
-                                        [cls.active]: active,
-                                        [cls.disabled]: item.disabled,
+                                        [popupCls.active]: active,
+                                        [popupCls.disabled]: item.disabled,
                                     })}
                                 >
                                     <HStack gap="8">

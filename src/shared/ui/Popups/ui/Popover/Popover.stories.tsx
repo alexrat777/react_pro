@@ -1,58 +1,50 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button } from '../Button/Button';
-import { Dropdown } from './Dropdown';
+import { Popover } from 'shared/ui/Popups';
+import { Button } from 'shared/ui/Button/Button';
 
 export default {
-    title: 'shared/Dropdown',
-    component: Dropdown,
+    title: 'shared/Popups/Popover',
+    component: Popover,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
     decorators: [
         (Story) => <div style={{ padding: 150, display: 'flex' }}><Story /></div>,
     ],
-} as ComponentMeta<typeof Dropdown>;
+} as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
-const items = [
-    { content: 'first' },
-    { content: 'second' },
-    { content: 'third' },
-];
+const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
+
 export const Primary = Template.bind({});
 Primary.args = {
     trigger: <Button>Open</Button>,
-    items,
-};
-export const LinkHref = Template.bind({});
-LinkHref.args = {
-    trigger: <Button>Open</Button>,
-    items,
+    children: <div>children children children children</div>,
+
 };
 
 export const topRight = Template.bind({});
 topRight.args = {
     trigger: <Button>Open</Button>,
-    items,
+    children: <div>children children children children</div>,
     direction: 'top right',
 
 };
 export const topLeft = Template.bind({});
 topLeft.args = {
     trigger: <Button>Open</Button>,
-    items,
+    children: <div>children children children children</div>,
     direction: 'top left',
 };
 export const bottomLeft = Template.bind({});
 bottomLeft.args = {
     trigger: <Button>Open</Button>,
-    items,
+    children: <div>children children children children</div>,
     direction: 'bottom left',
 };
 export const bottomRight = Template.bind({});
 bottomRight.args = {
     trigger: <Button>Open</Button>,
-    items,
+    children: <div>children children children children</div>,
     direction: 'bottom right',
 };

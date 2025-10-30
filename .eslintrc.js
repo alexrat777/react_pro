@@ -42,7 +42,9 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['as', 'to', 'data-testid', 'target', 'justify', 'align', 'direction', 'gap', 'role'],
+            ignoreAttribute: [
+                'borderRadius', 'as', 'to', 'data-testid', 'target', 'justify', 'align', 'direction', 'gap', 'role',
+            ],
         }],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'jsx-a11y/click-events-have-key-events': 'off',
