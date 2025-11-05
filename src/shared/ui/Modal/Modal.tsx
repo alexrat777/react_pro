@@ -3,7 +3,7 @@ import React, {
     useCallback, useEffect, useRef, useState,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { Overlay } from 'shared/ui/Overlay/Overlay';
+import { Overlay } from '../Overlay/Overlay';
 import Portal from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
