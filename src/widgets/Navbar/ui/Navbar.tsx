@@ -32,6 +32,7 @@ export const Navbar = memo((props:NavbarProps) => {
     const onOpenModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
+
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
