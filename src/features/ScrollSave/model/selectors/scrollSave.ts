@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 export const getScrollSaveScroll = (state:StateSchema) => state.scrollSave.scroll;
 // создание реселекта что б получить из объекто только значение

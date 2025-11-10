@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { Link } from 'react-router-dom';
 import { HTMLAttributeAnchorTarget, memo, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './AppLink.module.scss';
 
 export enum AppLinkThem {

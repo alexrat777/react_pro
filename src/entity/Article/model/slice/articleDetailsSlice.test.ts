@@ -1,4 +1,4 @@
-import { LoginSchema } from 'features/AuthByUsername';
+import { LoginSchema } from '@/features/AuthByUsername';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fechArticleById/fetchArticleById';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';

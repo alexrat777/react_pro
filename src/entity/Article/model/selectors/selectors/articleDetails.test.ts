@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Country } from 'entity/Country';
-import { Currency } from 'entity/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Country } from '@/entity/Country';
+import { Currency } from '@/entity/Currency';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';
 
 describe('articleDetails.test', () => {

@@ -2,9 +2,9 @@
 // import { useTranslation } from 'react-i18next';
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
-import CheckIcon from 'shared/assets/icons/check-mark.svg';
-import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
-import { DropdownDirection } from 'shared/types/ui';
+import CheckIcon from '@/shared/assets/icons/check-mark.svg';
+import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { Button } from '../../../Button/Button';
 import { HStack } from '../../../Stack';
 import { Icon } from '../../../Icon/Icon';

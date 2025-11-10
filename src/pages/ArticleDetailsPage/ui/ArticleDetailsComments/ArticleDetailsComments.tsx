@@ -1,22 +1,22 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import {memo, Suspense, useCallback} from 'react';
-import Text, { TextSize } from 'shared/ui/Text/Text';
+import { memo, Suspense, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddCommentForm } from 'features/addCommentForm';
-import { CommentList } from 'entity/Comment';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {HStack, VStack} from 'shared/ui/Stack';
+import Text, { TextSize } from '@/shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/helpers/classNames/classNames';
+import { AddCommentForm } from '@/features/addCommentForm';
+import { CommentList } from '@/entity/Comment';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoadings } from '../../model/selectors/getComments/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import cls from "features/addCommentForm/ui/AddCommentForm/AddCommentForm.module.scss";
-import Input from "shared/ui/Input/Input";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
-import {Skeleton} from "shared/ui/Skeleton/Skeleton";
+import cls from '@/features/addCommentForm/ui/AddCommentForm/AddCommentForm.module.scss';
+import Input from '@/shared/ui/Input/Input';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -36,12 +36,11 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         dispatch(fetchCommentsByArticleId(id));
     });
     const Skeletons = (
-        <HStack justify="between" gap={'8'} max className={classNames(cls.AddCommentForm, {}, [className])}>
-            <Skeleton width={'80%'} height={'30'} />
-            <Skeleton width={'110px'} height={'30'} />
+        <HStack justify="between" gap="8" max className={classNames(cls.AddCommentForm, {}, [className])}>
+            <Skeleton width="80%" height="30" />
+            <Skeleton width="110px" height="30" />
         </HStack>
-        );
-
+    );
 
     return (
         <VStack gap="16" max className={classNames('', {}, [className])}>

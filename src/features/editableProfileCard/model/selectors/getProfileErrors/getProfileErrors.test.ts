@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getProfileErrors } from './getProfileErrors';
 
 describe('getProfileErrors.test', () => {

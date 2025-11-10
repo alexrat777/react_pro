@@ -1,1 +1,1 @@
-export { NotificationList } from 'entity/Notification/ui/NotificationList/NotificationList';
+export { NotificationList } from '@/entity/Notification/ui/NotificationList/NotificationList';

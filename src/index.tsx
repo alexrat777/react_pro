@@ -1,9 +1,9 @@
 import { createRoot } from 'react-dom/client';
-import 'app/style/index.scss';
+import '@/app/style/index.scss';
 import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
-import { ErrorBoundary } from 'app/providers/ErrorBoundeary';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { ErrorBoundary } from '@/app/providers/ErrorBoundeary';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import App from './app/App';
 import './shared/config/i18n/i18n';
 

@@ -1,6 +1,6 @@
-import { classNames, Mods } from 'shared/lib/helpers/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ChangeEvent, memo, useMemo } from 'react';
+import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Select.module.scss';
 // исправил компонент добавив дженерик
 export interface SelectOption<T extends string> {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
-import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import {Normal} from "features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard.stories";
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Normal } from '@/features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard.stories';
 
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailsComments',
@@ -16,6 +16,6 @@ const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <Artic
 
 export const Primary = Template.bind({});
 Primary.args = {
-    id:'1'
+    id: '1',
 };
-Primary.decorators=[StoreDecorator({})];
+Primary.decorators = [StoreDecorator({})];
