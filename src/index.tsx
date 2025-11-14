@@ -8,12 +8,14 @@ import App from './app/App';
 import './shared/config/i18n/i18n';
 
 // After
-
 const container = document.getElementById('root');
+
 if (!container) {
-    throw new Error('Container not found. Not mount react-dom');
+    throw new Error('Контейнер root не найден. НЕ удалось вмонтировать реакт приложение');
 }
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
+
+const root = createRoot(container);
+
 root.render(
     <BrowserRouter>
         <StoreProvider>

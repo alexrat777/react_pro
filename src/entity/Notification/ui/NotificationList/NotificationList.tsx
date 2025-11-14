@@ -19,7 +19,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
             <VStack
                 gap="16"
                 max
-                className={classNames(cls.NotificationList, {}, [className])}
+                className={classNames(cls.NotificationListSkeleton, {}, [className])}
             >
                 <Skeleton width="100%" borderRadius="8px" height="80px" />
                 <Skeleton width="100%" borderRadius="8px" height="80px" />

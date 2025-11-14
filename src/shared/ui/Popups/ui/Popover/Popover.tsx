@@ -25,7 +25,10 @@ export function Popover(props: PopoverProps) {
             className={classNames(cls.Popover, {}, [className, popupCls.popup])}
         >
             {/* кнопка */}
-            <HPopover.Button className={popupCls.trigger}>
+            <HPopover.Button
+                as="div"
+                className={popupCls.trigger}
+            >
                 {trigger}
             </HPopover.Button>
             {/* внутренности поповера */}
