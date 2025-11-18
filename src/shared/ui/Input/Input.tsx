@@ -11,6 +11,7 @@ interface InputProps extends HTMLInputProps {
     onChange?: (value: string) => void;
     autoFocus?: boolean;
     readOnly?: boolean;
+    maxWidth?:boolean;
 }
 
 const Input = memo((props:InputProps) => {
@@ -22,6 +23,7 @@ const Input = memo((props:InputProps) => {
         type = 'text',
         autoFocus,
         readOnly,
+        maxWidth,
         ...otherProps
     } = props;
     const ref = useRef<HTMLInputElement>(null);
@@ -49,6 +51,7 @@ const Input = memo((props:InputProps) => {
     };
     const mods: Mods = {
         [cls.readOnly]: readOnly,
+        [cls.max]: maxWidth,
     };
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>
@@ -57,7 +60,7 @@ const Input = memo((props:InputProps) => {
                     {`${placeholder}>`}
                 </div>
             )}
-            <div className={cls.caretWraper}>
+            <div className={classNames(cls.caretWraper, {}, [])}>
                 <input
                     ref={ref}
                     type={type}

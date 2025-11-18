@@ -17,7 +17,7 @@ export const StarRating = memo((props: StarRatingProps) => {
         className, size = 30, selectedStars = 0, onSelect,
     } = props;
     const { t } = useTranslation();
-    const [currentStarsCount, setCurrentStarsCount] = useState(0);
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
     // функция наведения на звезду
     // но так как мы будем прописывать функцию для каждой звезды, то нужно замкнуть для каждой звезды свое значение,

@@ -18,6 +18,7 @@ interface RatingCardProps {
     hasFeedback?: boolean;
     onCancel?: (starsCount:number) => void;
     onAccept?: (starsCount:number, feedback?:string) => void;
+    rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -28,10 +29,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
         hasFeedback,
         onAccept,
         onCancel,
+        rate = 0,
     } = props;
     const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starCount, setStarCount] = useState(0);
+    const [starCount, setStarCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
     const onSelectStars = useCallback((selectedStarCount:number) => {
         // установить выбраное количество звезд
@@ -61,20 +63,20 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 value={feedback}
                 onChange={setFeedback}
                 placeholder={t('Ваш отзыв')}
+                maxWidth
             />
         </>
 
     );
     return (
-        <Card className={classNames('', {}, [className])}>
+        <Card className={className} max>
             <VStack align="center" gap="8">
-                <Text title={title} />
-                <StarRating size={40} onSelect={onSelectStars} />
+                <Text title={starCount ? t('Спасибо за оценку!') : title} />
+                <StarRating selectedStars={starCount} size={40} onSelect={onSelectStars} />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
                     <VStack max gap="32">
-
                         {modalContent}
                         <HStack max gap="16" justify="end">
                             <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>

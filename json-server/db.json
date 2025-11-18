@@ -700,5 +700,96 @@
       "username": "manager",
       "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "1515",
+      "id": "jEQUHHB"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "плохо",
+      "id": "fgDQH2R"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 4,
+      "feedback": "",
+      "id": "wa1lt-h"
+    },
+    {
+      "userId": "2",
+      "articleId": "7",
+      "rate": 5,
+      "id": "SlRWJYA"
+    },
+    {
+      "userId": "2",
+      "articleId": "6",
+      "rate": 4,
+      "id": "cnI3yfO"
+    },
+    {
+      "userId": "2",
+      "articleId": "5",
+      "rate": 4,
+      "feedback": "ghfgfdlkgdfklgjlkfdjglkfdjgklfdgkdfjgkdfklgdflkgjdfklgjkdlfgjkldfjglkdfjgkldfjg",
+      "id": "6zbVVqL"
+    },
+    {
+      "userId": "2",
+      "articleId": "10",
+      "rate": 3,
+      "id": "V-2eLXB"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хороший автор",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Отличный автор",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "userId": "2",
+      "profileId": "2",
+      "rate": 5,
+      "feedback": "Сам себя не похвалишь, никто не похвалит",
+      "id": "Z9ENMtZ"
+    },
+    {
+      "userId": "2",
+      "profileId": "1",
+      "rate": 3,
+      "id": "GBqyOld"
+    }
   ]
 }
