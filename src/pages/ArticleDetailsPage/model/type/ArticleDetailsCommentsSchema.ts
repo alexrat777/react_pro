@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { Comment } from '@/entity/Comment';
+import { Comment } from '@/entities/Comment';
 // наследуюем для того что бы можно было работать с нормальизованными данными extends EntityState<Comment>
 export interface ArticleDetailsCommentsSchema extends EntityState<Comment>{
     isLoading?: boolean;

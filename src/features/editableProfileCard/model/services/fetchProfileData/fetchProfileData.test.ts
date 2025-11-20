@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from '@/shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
-import { Country } from '@/entity/Country';
-import { Currency } from '@/entity/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { fetchProfileData } from './fetchProfileData';
 
 describe('fetchProfileData.test', () => {

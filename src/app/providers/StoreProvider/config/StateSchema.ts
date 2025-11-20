@@ -3,10 +3,10 @@ import {
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { AxiosInstance } from 'axios';
-import { CounterSchema } from '@/entity/Counter';
-import { UserSchema } from '@/entity/User';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
-import { ArticleDetailsSchema } from '@/entity/Article';
+import { ArticleDetailsSchema } from '@/entities/Article';
 import {
     ArticleDetailsCommentsSchema,
     ArticleDetailsPageSchema,

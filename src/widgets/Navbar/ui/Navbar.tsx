@@ -6,7 +6,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entity/User';
+} from '@/entities/User';
 import Text, { TextTheme } from '@/shared/ui/Text/Text';
 import AppLink, { AppLinkThem } from '@/shared/ui/AppLink/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';

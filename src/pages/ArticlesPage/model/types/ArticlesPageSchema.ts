@@ -1,7 +1,7 @@
 import { EntityState } from '@reduxjs/toolkit';
 import {
     Article, ArticleSortField, ArticleView, ArticleType,
-} from '@/entity/Article';
+} from '@/entities/Article';
 import { SortOrder } from '@/shared/types/sort';
 
 // наследуюем для того что бы можно было работать с нормальизованными данными extends EntityState<Article>

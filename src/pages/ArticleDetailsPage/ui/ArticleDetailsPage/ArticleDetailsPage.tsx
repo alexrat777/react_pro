@@ -2,13 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { CommentList } from '@/entity/Comment';
+import { CommentList } from '@/entities/Comment';
 import DynamicModuleLoader, { ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { Page } from '@/widgets/Page/Page';
-import { ArticleDetails, ArticleList } from '@/entity/Article';
+import { ArticleDetails, ArticleList } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -21,7 +21,7 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cls from './ArticleDetailsPage.module.scss';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
-import { RatingCard } from '@/entity/Rating';
+import { RatingCard } from '@/entities/Rating';
 import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {

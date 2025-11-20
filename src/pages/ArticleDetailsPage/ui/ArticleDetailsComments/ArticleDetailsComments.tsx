@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Text, { TextSize } from '@/shared/ui/Text/Text';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { AddCommentForm } from '@/features/addCommentForm';
-import { CommentList } from '@/entity/Comment';
+import { CommentList } from '@/entities/Comment';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import {

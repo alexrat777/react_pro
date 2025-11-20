@@ -4,7 +4,7 @@ import {
     createSlice, PayloadAction,
 } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { Article } from '@/entity/Article';
+import { Article } from '@/entities/Article';
 import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';

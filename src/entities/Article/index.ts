@@ -1,4 +1,4 @@
-export { ArticleDetails } from '@/entity/Article/ui/ArticleDetails/ArticleDetails';
+export { ArticleDetails } from '@/entities/Article/ui/ArticleDetails/ArticleDetails';
 export type {
     Article,
 } from './model/types/article';
@@ -8,4 +8,4 @@ export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelecto
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { getArticleDetailsData } from './model/selectors/selectors/articleDetails';
-export { ArticleView, ArticleSortField, ArticleType } from '@/entity/Article/model/const/articleConst';
+export { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article/model/const/articleConst';

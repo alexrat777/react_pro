@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ComponentRender } from '@/shared/lib/helpers/tests/componentRender/componentRender';
-import { Profile } from '@/entity/Profile';
-import { Currency } from '@/entity/Currency';
-import { Country } from '@/entity/Country';
+import { Profile } from '@/entities/Profile';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { $api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';

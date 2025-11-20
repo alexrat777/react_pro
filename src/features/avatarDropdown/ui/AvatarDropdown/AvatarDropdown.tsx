@@ -6,7 +6,7 @@ import { Dropdown } from '@/shared/ui/Popups';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entity/User';
+} from '@/entities/User';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 
 interface AvatarDropdownProps {

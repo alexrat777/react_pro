@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
-} from '@/entity/Article';
+} from '@/entities/Article';
 import { Card } from '@/shared/ui/Card/Card';
 import Input from '@/shared/ui/Input/Input';
 import { SortOrder } from '@/shared/types/sort';
