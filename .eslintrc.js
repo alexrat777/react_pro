@@ -55,7 +55,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
-        'alex-lex-plugin/path-checker': 'error',
+        'alex-lex-plugin/path-checker': ['error', {alias: '@'}],
     },
     globals: {
         __IS_DEV__: true,

@@ -7,7 +7,8 @@ import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import DynamicModuleLoader, { ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { HStack } from '@/shared/ui/Stack';
-import { addCommentsFormActions, addCommentsFormReducer } from '../../model/slice/addCommentsFormSlice';
+import { addCommentsFormActions, addCommentsFormReducer }
+    from '../../model/slice/addCommentsFormSlice';
 import {
     getAddCommentFormError,
     getAddCommentFormText,
