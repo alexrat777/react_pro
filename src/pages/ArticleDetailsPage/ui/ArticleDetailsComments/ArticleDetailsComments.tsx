@@ -13,7 +13,6 @@ import {
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoadings } from '../../model/selectors/getComments/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import cls from '@/features/addCommentForm/ui/AddCommentForm/AddCommentForm.module.scss';
 import Input from '@/shared/ui/Input/Input';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
@@ -36,7 +35,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         dispatch(fetchCommentsByArticleId(id));
     });
     const Skeletons = (
-        <HStack justify="between" gap="8" max className={classNames(cls.AddCommentForm, {}, [className])}>
+        <HStack justify="between" gap="8" max className={classNames('', {}, [className])}>
             <Skeleton width="80%" height="30" />
             <Skeleton width="110px" height="30" />
         </HStack>

@@ -1,5 +1,5 @@
 import { TestAsyncThunk } from '@/shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
-import { ArticleBlockType } from '@/entities/Article/model/const/articleConst';
+import { ArticleBlockType } from '@/entities/Article';
 import { addCommentForArticle } from '../../services/addCommentForArticle/addCommentForArticle';
 // данные для стейта
 const data = {

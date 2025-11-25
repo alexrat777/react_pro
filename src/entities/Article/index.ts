@@ -9,3 +9,4 @@ export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelecto
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { getArticleDetailsData } from './model/selectors/selectors/articleDetails';
 export { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article/model/const/articleConst';
+export { ArticleBlockType } from './model/const/articleConst';

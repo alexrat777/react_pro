@@ -2,7 +2,6 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Normal } from '@/features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard.stories';
 
 export default {
     title: 'pages/ArticleDetailsPage/ArticleDetailsComments',

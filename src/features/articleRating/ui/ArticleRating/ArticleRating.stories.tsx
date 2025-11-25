@@ -3,9 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
 import ArticleRating from './ArticleRating';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import {
-    Normal,
-} from '@/features/articleRecommendationsList/ui/ArticleRecommendationsList/ArticleRecommendationsList.stories';
 
 export default {
     title: 'features/Rating/ArticleRating',

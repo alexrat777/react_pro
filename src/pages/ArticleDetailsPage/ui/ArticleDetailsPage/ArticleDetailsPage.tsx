@@ -7,7 +7,7 @@ import DynamicModuleLoader, { ReducersList } from '@/shared/components/DynamicMo
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from '@/features/addCommentForm';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { ArticleDetails, ArticleList } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';

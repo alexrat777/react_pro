@@ -15,3 +15,4 @@ export {
 } from './model/selectors/getUserInit/getUserInit';
 
 export { getUserRoles, isUserAdmin, isUserManager } from './model/selectors/roleSelectors/roleSelectors';
+export { UserRole } from './model/const/userConst';
