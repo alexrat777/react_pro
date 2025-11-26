@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { CommentList } from '@/entities/Comment';
-import DynamicModuleLoader, { ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import DynamicModuleLoader, { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from '@/features/addCommentForm';

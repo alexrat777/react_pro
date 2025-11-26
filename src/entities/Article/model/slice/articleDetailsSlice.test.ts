@@ -1,7 +1,8 @@
-import { LoginSchema } from '@/features/AuthByUsername';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fechArticleById/fetchArticleById';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
+// eslint-disable-next-line alex-lex-plugin/layer-imports
+import { LoginSchema } from '@/features/AuthByUsername';
 
 describe('articleDetailsSlice.test', () => {
     test('test articleDetailsSlice.pending', () => {

@@ -29,3 +29,4 @@ root.render(
 );
 
 // 1 шаг для router оборачиваем в <BrowserRouter> <App />
+export { Theme } from '@/shared/const/theme';
