@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './StarRating.module.scss';
@@ -16,7 +15,6 @@ export const StarRating = memo((props: StarRatingProps) => {
     const {
         className, size = 30, selectedStars = 0, onSelect,
     } = props;
-    const { t } = useTranslation();
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
     // функция наведения на звезду

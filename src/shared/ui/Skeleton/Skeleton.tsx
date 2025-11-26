@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { CSSProperties, memo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Skeleton.module.scss';
@@ -14,7 +13,6 @@ export const Skeleton = memo((props: SkeletonProps) => {
     const {
         className, width, height, borderRadius,
     } = props;
-    const { t } = useTranslation();
     const style:CSSProperties = { width, height, borderRadius };
     return (
         <div

@@ -56,7 +56,13 @@ module.exports = {
         'no-undef': 'off',
         'arrow-body-style': 'off',
         'alex-lex-plugin/path-checker': ['error', { alias: '@' }],
-        'alex-lex-plugin/public-api-imports': ['error', { alias: '@' }],
+        'alex-lex-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

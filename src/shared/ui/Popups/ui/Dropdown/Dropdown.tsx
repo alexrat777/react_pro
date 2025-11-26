@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
