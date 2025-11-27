@@ -6,11 +6,11 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import {
     ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
 } from '@/entities/Article';
-import { Card } from '@/shared/ui/Card/Card';
-import Input from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card';
+import Input from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { articlePageActions } from '../../model/slices/articlePageSlice';
 import {

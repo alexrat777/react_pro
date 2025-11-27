@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Modal from '@/shared/ui/Modal/Modal';
+import Modal from '@/shared/ui/Modal';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Loader } from '@/shared/ui/Loader';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';

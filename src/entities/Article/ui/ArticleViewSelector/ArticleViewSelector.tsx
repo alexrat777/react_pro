@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import TitledIcon from '@/shared/assets/icons/tiled-24-24.svg';
 import { ArticleView } from '../../model/const/articleConst';

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import Input from '@/shared/ui/Input/Input';
-import Text, { TextTheme } from '@/shared/ui/Text/Text';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import Input from '@/shared/ui/Input';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import DynamicModuleLoader, { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

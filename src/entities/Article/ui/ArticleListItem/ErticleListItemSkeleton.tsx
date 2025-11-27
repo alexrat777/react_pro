@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/Card';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { ArticleView } from '../../model/const/articleConst';
 import cls from './ArticleListItem.module.scss';
 
