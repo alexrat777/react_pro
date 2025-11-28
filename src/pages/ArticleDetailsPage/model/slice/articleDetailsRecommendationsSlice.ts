@@ -1,7 +1,7 @@
 // сделано на основе https://redux-toolkit.js.org/api/createEntityAdapter    делаем адаптер для нормализации
 import {
     createEntityAdapter,
-    createSlice, PayloadAction,
+    createSlice,
 } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';

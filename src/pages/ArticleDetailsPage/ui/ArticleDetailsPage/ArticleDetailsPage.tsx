@@ -1,27 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { CommentList } from '@/entities/Comment';
 import DynamicModuleLoader, { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { AddCommentForm } from '@/features/addCommentForm';
 import { Page } from '@/widgets/Page';
-import { ArticleDetails, ArticleList } from '@/entities/Article';
+import { ArticleDetails } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
-import {
-    fetchArticleRecommendations,
-} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+
 import cls from './ArticleDetailsPage.module.scss';
-import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
-import { RatingCard } from '@/entities/Rating';
 import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {

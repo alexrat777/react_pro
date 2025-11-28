@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';

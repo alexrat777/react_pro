@@ -13,8 +13,6 @@ import {
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoadings } from '../../model/selectors/getComments/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import Input from '@/shared/ui/Input';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleDetailsCommentsProps {
