@@ -28,11 +28,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
+        if (__PROJECT__ !== 'storybook') dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(initArticlePage(searchParams));
+        if (__PROJECT__ !== 'storybook') dispatch(initArticlePage(searchParams));
     });
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
