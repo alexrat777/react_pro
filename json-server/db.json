@@ -761,6 +761,27 @@
       "articleId": "10",
       "rate": 3,
       "id": "V-2eLXB"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "8nmmwLL"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 4,
+      "feedback": "норм",
+      "id": "vihd_lY"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 4,
+      "feedback": "",
+      "id": "YjY55Y9"
     }
   ],
   "profile-ratings": [

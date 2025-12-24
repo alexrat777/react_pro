@@ -1,8 +1,9 @@
-import { Dispatch } from 'react';
+// import { Dispatch } from 'react';
 // import { TestAsyncThunk } from '@/shared/lib/helpers/tests/TestAsyncThunk/TestAsyncThunk';
 // import { StateSchema } from '@/app/providers/StoreProvider';
-// import { initArticlePage } from './initArticlePage';
+import { initArticlePage } from './initArticlePage';
 
+{ initArticlePage; }
 // jest.mock('./initArticlePage');
 
 // describe('initArticlePage.test', () => {

@@ -3,3 +3,11 @@ node_modules
 .idea
 /storybook-static
 /reports
+/scripts/tests/graf.js
+/scripts/tests/graf_weight.js
+/scripts/tests/n-tree.js
+/scripts/tests/quick sort.js
+/scripts/tests/sort buble.js
+/scripts/tests/sort line.js
+/scripts/tests/treeBinare.js
+/scripts/tests/
