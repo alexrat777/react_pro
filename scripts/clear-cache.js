@@ -1,5 +1,6 @@
 const path = require('path');
 
+// eslint-disable-next-line camelcase
 const path_cache = path.resolve(__dirname, '..', 'node_modules', '.cache');
 
 console.log(path_cache);
