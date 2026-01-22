@@ -11,8 +11,9 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
-
-interface PageProps {
+import { TestProps } from '@/shared/types/tests';
+// расширяем от TestProps для добавления data-testid
+interface PageProps extends TestProps{
     className?: string;
     children?: ReactNode;
     onScrollEnd?: () => void;
@@ -47,6 +48,7 @@ export const Page = memo((props: PageProps) => {
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
+            data-testid={props['data-testid']} // проброска data-testid от страницы верхней
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
