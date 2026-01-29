@@ -2,7 +2,7 @@
 node_modules
 .idea
 /storybook-static
-/reports
+/reports/unit
 /scripts/tests/graf.js
 /scripts/tests/graf_weight.js
 /scripts/tests/n-tree.js
