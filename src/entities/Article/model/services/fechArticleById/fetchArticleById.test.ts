@@ -10,7 +10,7 @@ describe('fetchProfileData.test', () => {
             id: '1',
             title: 'Javascript news',
             subtitle: 'Что нового в JS за 2022 год?',
-            img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+            img: 'https://ru.wikipedia.org/wiki/JavaScript#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Unofficial_JavaScript_logo_2.svg',
             views: 1022,
             createdAt: '26.02.2022',
             type: [ArticleType.IT],
