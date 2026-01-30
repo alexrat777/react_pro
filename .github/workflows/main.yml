@@ -97,7 +97,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
 
   checks:
     runs-on: ubuntu-latest
