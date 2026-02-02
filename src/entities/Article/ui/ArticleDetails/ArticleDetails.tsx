@@ -23,7 +23,7 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleBlock } from '../../model/types/article';
 import { fetchArticleById } from '../../model/services/fechArticleById/fetchArticleById';
 import cls from './ArticleDetails.module.scss';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from '../../testing';
 
 interface ArticleDetailsProps {
     className?: string;
