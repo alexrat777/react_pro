@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, Suspense, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { AddCommentForm } from '@/features/addCommentForm';
@@ -14,6 +14,7 @@ import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlic
 import { getArticleDetailsCommentsIsLoadings } from '../../model/selectors/getComments/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -25,7 +26,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     const { t } = useTranslation();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoadings);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const onSendComment = useCallback((text:string) => {
         dispatch(addCommentForArticle(text)); // сервис отправки на бек данных описанный внутри сущности ArticleDetailsPage
     }, [dispatch]);

@@ -30,11 +30,11 @@ describe('app/router/AppRouter', () => {
         const page = await screen.findByTestId('MainPage'); // поиск элемента по TestId асинхронно
         expect(page).toBeInTheDocument(); // проверка что есть на странице
     });
-    test('Зарегестрированный пользователь', async () => {
+    test('Зарегистрированный пользователь', async () => {
         ComponentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
-                user: { _inited: true, authData: {} },
+                user: { _inited: true, authData: { id: '1' } },
             },
         });
 

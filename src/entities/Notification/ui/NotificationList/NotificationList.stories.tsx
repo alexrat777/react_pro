@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 import { NotificationList } from './NotificationList';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
@@ -10,7 +9,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [withMock], //  декоратор для мока подгрузки данных через апи РТК query
+    // decorators: [withMock], //  декоратор для мока подгрузки данных через апи РТК query
 
 } as ComponentMeta<typeof NotificationList>;
 
