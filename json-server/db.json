@@ -664,6 +664,15 @@
         "MANAGER"
       ],
       "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
+    },
+    {
+      "id": "1",
+      "username": "testuser",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
     }
   ],
   "profile": [
