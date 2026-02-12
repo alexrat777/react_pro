@@ -35,14 +35,13 @@
 //   }
 // }
 import {USER_LOCALSTORAGE_KEY} from "@/shared/const/localstorage";
-import {login} from "./commands/commands";
-
-Cypress.Commands.add('login', login);
-// @ts-ignore
-declare global {
-    namespace Cypress {
-        interface Chainable {
-            login(username?: string, password?: string): Chainable
-        }
-    }
-}
+import * as commonCommands from "./commands/common";
+import * as profileCommands from "./commands/profile";
+import * as articleCommands from "./commands/article";
+import * as commentsCommand from "./commands/comments";
+import * as ratingCommand from "./commands/rating";
+Cypress.Commands.addAll(commonCommands);
+Cypress.Commands.addAll(profileCommands);
+Cypress.Commands.addAll(articleCommands);
+Cypress.Commands.addAll(commentsCommand);
+Cypress.Commands.addAll(ratingCommand);
