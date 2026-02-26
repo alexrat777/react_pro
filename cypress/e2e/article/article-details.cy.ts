@@ -14,7 +14,7 @@ describe('Пользователь заходит на страницу стат
     });
     afterEach(() => {
         cy.removeArticle(currentArticleID);
-    })
+    });
     it('И видит содержимое статьи', () => {
         cy.getByTestId("ArticleDetails.Info").should('exist');
     });
