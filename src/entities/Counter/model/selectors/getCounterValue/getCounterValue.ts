@@ -6,4 +6,6 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 //     (counter) => counter.value,
 // );
 // useCounterValue - это переданная функция селектор (state:StateSchema) => state.counter
-export const [useCounterValue, getCounterValue] = buildSelector((state:StateSchema) => state.counter);
+export const [useCounterValue, getCounterValue] = buildSelector(
+    (state: StateSchema) => state.counter,
+);

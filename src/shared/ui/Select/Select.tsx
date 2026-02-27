@@ -9,46 +9,39 @@ export interface SelectOption<T extends string> {
 }
 interface SelectProps<T extends string> {
     className?: string;
-    label?:string;
+    label?: string;
     options?: SelectOption<T>[];
     value?: T;
     readOnly?: boolean;
     onChange?: (value: T) => void;
 }
 
-export const Select = <T extends string>(props:SelectProps<T>) => {
-    const {
-        className,
-        label,
-        options,
-        value,
-        onChange,
-        readOnly,
-    } = props;
+export const Select = <T extends string>(props: SelectProps<T>) => {
+    const { className, label, options, value, onChange, readOnly } = props;
     const { t } = useTranslation();
-    const onChangeHandler = (e:ChangeEvent<HTMLSelectElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         if (onChange) onChange(e.target.value as T);
     };
-    const optionList = useMemo(() => options?.map((opt) => (
-        <option
-            className={cls.option}
-            value={opt.value}
-            key={opt.value}
-        >
-            {opt.content}
-        </option>
-    )), [options]);
+    const optionList = useMemo(
+        () =>
+            options?.map((opt) => (
+                <option
+                    className={cls.option}
+                    value={opt.value}
+                    key={opt.value}
+                >
+                    {opt.content}
+                </option>
+            )),
+        [options],
+    );
     const mods: Mods = {
         [cls.readOnly]: readOnly,
     };
     return (
         <div className={classNames(cls.Wrapper, mods, [className])}>
             <div className={cls.label}>
-                {label && (
-                    <span className={cls.label}>
-                        {`${label}>`}
-                    </span>
-                )}
+                {label && <span className={cls.label}>{`${label}>`}</span>}
                 <select
                     className={cls.select}
                     value={value}

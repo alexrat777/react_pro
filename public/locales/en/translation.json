@@ -1,42 +1,42 @@
 {
-  "Язык": "English",
-  "О сайте": "About",
-  "Главная": "Main",
-  "Статьи": "Articles",
-  "Профиль": "Profile",
-  "Нажать": "Click",
-  "Страница не найдена": "Page Not Found",
-  "Произошла непредвиденная ошибка": "An unexpected error occurred",
-  "Обновить страницу": "Refresh page",
-  "Создать ошибку": "Создать ошибку",
-  "сокрЯз": "EN",
-  "Войти": "Login",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
-    " Accusamus adipisci aperiam assumenda at blanditiis consequatur cum dignissimos dolor dolores eum fugit id in iste magnam magni mollitia nesciunt nihil nobis numquam officia, officiis quidem reiciendis rerum soluta temporibus, totam ut": {
-      " Ad animi culpa debitis, deleniti dolore eius eos eum fugiat fugit nam officiis quasi, qui rem sed voluptatibus? Accusantium harum modi optio possimus ut voluptatum! Animi aperiam architecto atque consequuntur cupiditate deserunt, dolore ducimus est et, eum eveniet expedita, id labore minima necessitatibus nostrum numquam perferendis placeat quaerat quisquam quo repudiandae sunt": {
-        " Blanditiis eius eos numquam perferendis quisquam, repudiandae sunt": {
-          "": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aperiam assumenda at blanditiis consequatur cum dignissimos dolor dolores eum fugit id in iste magnam magni mollitia nesciunt nihil nobis numquam officia, officiis quidem reiciendis rerum soluta temporibus, totam ut. Ad animi culpa debitis, deleniti dolore eius eos eum fugiat fugit nam officiis quasi, qui rem sed voluptatibus? Accusantium harum modi optio possimus ut voluptatum! Animi aperiam architecto atque consequuntur cupiditate deserunt, dolore ducimus est et, eum eveniet expedita, id labore minima necessitatibus nostrum numquam perferendis placeat quaerat quisquam quo repudiandae sunt. Blanditiis eius eos numquam perferendis quisquam, repudiandae sunt."
+    "Язык": "English",
+    "О сайте": "About",
+    "Главная": "Main",
+    "Статьи": "Articles",
+    "Профиль": "Profile",
+    "Нажать": "Click",
+    "Страница не найдена": "Page Not Found",
+    "Произошла непредвиденная ошибка": "An unexpected error occurred",
+    "Обновить страницу": "Refresh page",
+    "Создать ошибку": "Создать ошибку",
+    "сокрЯз": "EN",
+    "Войти": "Login",
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+        " Accusamus adipisci aperiam assumenda at blanditiis consequatur cum dignissimos dolor dolores eum fugit id in iste magnam magni mollitia nesciunt nihil nobis numquam officia, officiis quidem reiciendis rerum soluta temporibus, totam ut": {
+            " Ad animi culpa debitis, deleniti dolore eius eos eum fugiat fugit nam officiis quasi, qui rem sed voluptatibus? Accusantium harum modi optio possimus ut voluptatum! Animi aperiam architecto atque consequuntur cupiditate deserunt, dolore ducimus est et, eum eveniet expedita, id labore minima necessitatibus nostrum numquam perferendis placeat quaerat quisquam quo repudiandae sunt": {
+                " Blanditiis eius eos numquam perferendis quisquam, repudiandae sunt": {
+                    "": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aperiam assumenda at blanditiis consequatur cum dignissimos dolor dolores eum fugit id in iste magnam magni mollitia nesciunt nihil nobis numquam officia, officiis quidem reiciendis rerum soluta temporibus, totam ut. Ad animi culpa debitis, deleniti dolore eius eos eum fugiat fugit nam officiis quasi, qui rem sed voluptatibus? Accusantium harum modi optio possimus ut voluptatum! Animi aperiam architecto atque consequuntur cupiditate deserunt, dolore ducimus est et, eum eveniet expedita, id labore minima necessitatibus nostrum numquam perferendis placeat quaerat quisquam quo repudiandae sunt. Blanditiis eius eos numquam perferendis quisquam, repudiandae sunt."
+                }
+            }
         }
-      }
-    }
-  },
-  "increment": "increment",
-  "decrement": "decrement",
-  "Введите логин": "Enter login",
-  "Введите пароль": "Enter password",
-  "Форма авторизации": "Authorization form",
-  "Вы ввели неверный логин или пароль": "Incorrect login or password",
-  "Выйти": "Exit",
-  "Укажите валюту": "Укажите валюту",
-  "Укажите страну": "Укажите страну",
-  "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи",
-  "Комментарии отсутствуют": "Комментарии отсутствуют",
-  "Введите текст комментария": "Введите текст комментария",
-  "Отправить": "Отправить",
-  "Редактирование статьи с ID = ": "Редактирование статьи с ID = ",
-  "Редактирование статьи с ID = ${id}": "Редактирование статьи с ID = ${id}",
-  "Панель администрирования": "Панель администрирования",
-  "Админка": "Админка",
-  "Доступ запрещен": "Доступ запрещен",
-  "Спасибо за оценку!": "Спасибо за оценку!"
+    },
+    "increment": "increment",
+    "decrement": "decrement",
+    "Введите логин": "Enter login",
+    "Введите пароль": "Enter password",
+    "Форма авторизации": "Authorization form",
+    "Вы ввели неверный логин или пароль": "Incorrect login or password",
+    "Выйти": "Exit",
+    "Укажите валюту": "Укажите валюту",
+    "Укажите страну": "Укажите страну",
+    "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи",
+    "Комментарии отсутствуют": "Комментарии отсутствуют",
+    "Введите текст комментария": "Введите текст комментария",
+    "Отправить": "Отправить",
+    "Редактирование статьи с ID = ": "Редактирование статьи с ID = ",
+    "Редактирование статьи с ID = ${id}": "Редактирование статьи с ID = ${id}",
+    "Панель администрирования": "Панель администрирования",
+    "Админка": "Админка",
+    "Доступ запрещен": "Доступ запрещен",
+    "Спасибо за оценку!": "Спасибо за оценку!"
 }

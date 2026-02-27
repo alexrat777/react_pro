@@ -2,20 +2,20 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Text.module.scss';
 
-export enum TextTheme{
+export enum TextTheme {
     PRIMARY = 'primary',
     INVERTED = 'inverted',
-    ERROR = 'error'
+    ERROR = 'error',
 }
-export enum TextSize{
+export enum TextSize {
     S = 'size_s',
     L = 'size_l',
-    M = 'size_m'
+    M = 'size_m',
 }
 export enum TextAlign {
     LEFT = 'left',
     RIGHT = 'right',
-    CENTER = 'center'
+    CENTER = 'center',
 }
 interface TextProps {
     className?: string;
@@ -31,9 +31,8 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.S]: 'h3',
     [TextSize.M]: 'h2',
     [TextSize.L]: 'h1',
-
 };
-export const Text = memo((props:TextProps) => {
+export const Text = memo((props: TextProps) => {
     const {
         className,
         title,
@@ -42,7 +41,6 @@ export const Text = memo((props:TextProps) => {
         align = TextAlign.LEFT,
         size = TextSize.M,
         'data-testid': dataTestID = 'Text',
-
     } = props;
     const add = [className, cls[theme], cls[align], cls[size]];
     const HeaderTag = mapSizeToHeaderTag[size];
@@ -57,11 +55,7 @@ export const Text = memo((props:TextProps) => {
                 </HeaderTag>
             )}
             {text && (
-                <p
-                    className={cls.text}
-                    data-testid={`${dataTestID}.Paragraph`}
-
-                >
+                <p className={cls.text} data-testid={`${dataTestID}.Paragraph`}>
                     {text}
                 </p>
             )}

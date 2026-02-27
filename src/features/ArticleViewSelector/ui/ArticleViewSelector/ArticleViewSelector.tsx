@@ -9,7 +9,7 @@ import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
     className?: string;
-    view:ArticleView;
+    view: ArticleView;
     onViewClick: (view: ArticleView) => void;
 }
 
@@ -21,18 +21,13 @@ const viewTypes = [
     {
         view: ArticleView.BIG,
         icon: ListIcon,
-
     },
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-    const {
-        className,
-        view,
-        onViewClick,
-    } = props;
+    const { className, view, onViewClick } = props;
     // замыкаем внешнюю функцию которая принимает новое отображение от типа кнопки
-    const onClick = (newView:ArticleView) => () => {
+    const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
     };
     return (
@@ -45,7 +40,9 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewTypeElem.icon}
-                        className={classNames('', { [cls.notSelected]: viewTypeElem.view !== view })}
+                        className={classNames('', {
+                            [cls.notSelected]: viewTypeElem.view !== view,
+                        })}
                     />
                 </Button>
             ))}

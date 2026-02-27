@@ -13,10 +13,11 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [StoreDecorator({})],
-
 } as ComponentMeta<typeof NotFoundPage>;
 
-const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage />;
+const Template: ComponentStory<typeof NotFoundPage> = (args) => (
+    <NotFoundPage />
+);
 
 export const Light = Template.bind({});
 Light.args = {};

@@ -2,13 +2,12 @@ import { Profile } from '@/entities/Profile';
 
 import { ValidateProfileError } from '../../const/constProfile';
 
-export const ValidateProfileData = (profile?:Profile) => {
+export const ValidateProfileData = (profile?: Profile) => {
     if (!profile) {
         return [ValidateProfileError.NO_DATA];
     }
-    const {
-        first, lastname, age, country, username, avatar, city, currency,
-    } = profile;
+    const { first, lastname, age, country, username, avatar, city, currency } =
+        profile;
 
     const errors: ValidateProfileError[] = [];
     if (!first || !lastname) {
@@ -21,7 +20,8 @@ export const ValidateProfileData = (profile?:Profile) => {
         errors.push(ValidateProfileError.INCORRECT_USER_COUNTRY);
     }
     // eslint-disable-next-line
-    const urlRegex = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+    const urlRegex =
+        /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
 
     if (!avatar || !urlRegex.test(avatar)) {
         errors.push(ValidateProfileError.INCORRECT_USER_AVATAR);

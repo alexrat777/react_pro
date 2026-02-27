@@ -15,35 +15,39 @@ interface ArticleSortSelectorProps {
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
-    const {
-        className, sort, order, onChangeSort, onChangeOrder,
-    } = props;
+    const { className, sort, order, onChangeSort, onChangeOrder } = props;
     const { t } = useTranslation('article');
     // описываем массивы сортировок
-    const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
-        {
-            content: t('возрастанию'),
-            value: 'asc',
-        },
-        {
-            content: t('убыванию'),
-            value: 'desc',
-        },
-    ], [t]);
-    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
-        {
-            content: t('дате создания'),
-            value: ArticleSortField.CREATED,
-        },
-        {
-            content: t('названию'),
-            value: ArticleSortField.TITLE,
-        },
-        {
-            content: t('просмотрам'),
-            value: ArticleSortField.VIEWS,
-        },
-    ], [t]);
+    const orderOptions = useMemo<SelectOption<SortOrder>[]>(
+        () => [
+            {
+                content: t('возрастанию'),
+                value: 'asc',
+            },
+            {
+                content: t('убыванию'),
+                value: 'desc',
+            },
+        ],
+        [t],
+    );
+    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
+        () => [
+            {
+                content: t('дате создания'),
+                value: ArticleSortField.CREATED,
+            },
+            {
+                content: t('названию'),
+                value: ArticleSortField.TITLE,
+            },
+            {
+                content: t('просмотрам'),
+                value: ArticleSortField.VIEWS,
+            },
+        ],
+        [t],
+    );
 
     // const onChangeSortHandler = useCallback((newSort:string) => {
     //     onChangeSort(newSort as ArticleSortField);
@@ -67,7 +71,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                 value={order}
                 onChange={onChangeOrder}
             />
-
         </div>
     );
 });

@@ -17,7 +17,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = memo((props:NavbarProps) => {
+export const Navbar = memo((props: NavbarProps) => {
     const { className } = props;
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
@@ -43,26 +43,25 @@ export const Navbar = memo((props:NavbarProps) => {
                     className={cls.CreateBtn}
                 >
                     {t('Создать статью')}
-
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
-
             </header>
         );
     }
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button className={cls.links} theme={ButtonTheme.CLEAR_INVERTED} onClick={onOpenModal}>
+            <Button
+                className={cls.links}
+                theme={ButtonTheme.CLEAR_INVERTED}
+                onClick={onOpenModal}
+            >
                 {t('Войти')}
             </Button>
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

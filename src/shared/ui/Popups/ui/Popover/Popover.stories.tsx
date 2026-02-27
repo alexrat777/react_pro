@@ -10,17 +10,22 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
-        (Story) => <div style={{ padding: 150, display: 'flex' }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 150, display: 'flex' }}>
+                <Story />
+            </div>
+        ),
     ],
 } as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
+const Template: ComponentStory<typeof Popover> = (args) => (
+    <Popover {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
     trigger: <Button>Open</Button>,
     children: <div>children children children children</div>,
-
 };
 
 export const topRight = Template.bind({});
@@ -28,7 +33,6 @@ topRight.args = {
     trigger: <Button>Open</Button>,
     children: <div>children children children children</div>,
     direction: 'top right',
-
 };
 export const topLeft = Template.bind({});
 topLeft.args = {

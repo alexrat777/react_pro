@@ -2,27 +2,29 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Flex.module.scss';
 
- type FlexJustify = 'start' | 'center' | 'end' | 'between';
- type FlexAlign = 'start' | 'center' | 'end';
- type FlexDirection = 'row' | 'column';
- type FlexGap = '4' | '8' | '16' | '32';
-type DiveProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type FlexJustify = 'start' | 'center' | 'end' | 'between';
+type FlexAlign = 'start' | 'center' | 'end';
+type FlexDirection = 'row' | 'column';
+type FlexGap = '4' | '8' | '16' | '32';
+type DiveProps = DetailedHTMLProps<
+    HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
 
-export interface FlexProps extends DiveProps{
+export interface FlexProps extends DiveProps {
     className?: string;
     children?: ReactNode;
     justify?: FlexJustify;
-    align?:FlexAlign;
-    direction?:FlexDirection;
-    gap?:FlexGap;
-    max?:boolean;
+    align?: FlexAlign;
+    direction?: FlexDirection;
+    gap?: FlexGap;
+    max?: boolean;
 }
 const gapClasses: Record<FlexGap, string> = {
     4: cls.gap4,
     8: cls.gap8,
     16: cls.gap16,
     32: cls.gap32,
-
 };
 const justifyClasses: Record<FlexJustify, string> = {
     start: cls.justifyStart,

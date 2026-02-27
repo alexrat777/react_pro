@@ -22,12 +22,7 @@ const article = {
         username: 'user',
         avatar: 'https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg',
     },
-    type: [
-        'IT',
-        'SCIENCE',
-        'POLITICS',
-        'ECONOMICS',
-    ],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
     blocks: [
         {
             id: '1',
@@ -89,7 +84,9 @@ const article = {
         },
     ],
 } as Article;
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+);
 
 export const isLoadingBig = Template.bind({});
 isLoadingBig.args = {
@@ -106,22 +103,18 @@ isLoadingSmall.args = {
 };
 export const ListBig = Template.bind({});
 ListBig.args = {
-    articles: new Array(16)
-        .fill(null)
-        .map((item, index: any) => ({
-            ...article,
-            id: String(index),
-        })),
+    articles: new Array(16).fill(null).map((item, index: any) => ({
+        ...article,
+        id: String(index),
+    })),
     view: ArticleView.BIG,
 };
 
 export const ListSmall = Template.bind({});
 ListSmall.args = {
-    articles: new Array(9)
-        .fill(null)
-        .map((item, index: any) => ({
-            ...article,
-            id: String(index),
-        })),
+    articles: new Array(9).fill(null).map((item, index: any) => ({
+        ...article,
+        id: String(index),
+    })),
     view: ArticleView.SMALL,
 };

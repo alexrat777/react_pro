@@ -19,26 +19,23 @@ describe('validateProfileData.test', () => {
         expect(result).toEqual([]);
     });
     test('without fist and lastname', async () => {
-        const result = ValidateProfileData({ ...data, lastname: '', first: '' });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_USER_DATA,
-        ]);
+        const result = ValidateProfileData({
+            ...data,
+            lastname: '',
+            first: '',
+        });
+        expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
     });
     test('incorrect age', async () => {
         const result = ValidateProfileData({ ...data, age: undefined });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_USER_AGE,
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_USER_AGE]);
     });
     test('incorrect country', async () => {
         const result = ValidateProfileData({ ...data, country: undefined });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_USER_COUNTRY,
-
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_USER_COUNTRY]);
     });
     test('incorrect country', async () => {
-        const result = ValidateProfileData({ });
+        const result = ValidateProfileData({});
         expect(result).toEqual([
             ValidateProfileError.INCORRECT_USER_DATA,
             ValidateProfileError.INCORRECT_USER_AGE,
@@ -47,7 +44,6 @@ describe('validateProfileData.test', () => {
             ValidateProfileError.INCORRECT_USER_USERNAME,
             ValidateProfileError.INCORRECT_USER_CITY,
             ValidateProfileError.INCORRECT_USER_CURRENCY,
-
         ]);
     });
 });

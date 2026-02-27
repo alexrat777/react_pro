@@ -8,5 +8,4 @@ export enum ValidateProfileError {
     INCORRECT_USER_CURRENCY = 'INCORRECT_USER_CURRENCY',
     NO_DATA = 'NO_DATA',
     SERVER_ERROR = 'SERVER_ERROR',
-
 }

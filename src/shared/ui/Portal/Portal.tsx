@@ -6,11 +6,8 @@ interface PortalProps {
     element?: HTMLElement;
 }
 
-const Portal = (props:PortalProps) => {
-    const {
-        children,
-        element = document.body,
-    } = props;
+const Portal = (props: PortalProps) => {
+    const { children, element = document.body } = props;
     return createPortal(children, element);
 };
 

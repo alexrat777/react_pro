@@ -12,12 +12,12 @@ export default {
     },
 } as ComponentMeta<typeof AddCommentForm>;
 
-const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />;
+const Template: ComponentStory<typeof AddCommentForm> = (args) => (
+    <AddCommentForm {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
     onSendComment: action('onSendComment'), // для экшенов что бы передовать функции в аргументы
 };
-Primary.decorators = [
-    StoreDecorator({}),
-];
+Primary.decorators = [StoreDecorator({})];

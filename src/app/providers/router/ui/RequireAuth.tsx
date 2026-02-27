@@ -5,9 +5,9 @@ import { getUserAuthData, getUserRoles, UserRole } from '@/entities/User';
 
 import { getRouteForbidden, getRouteMain } from '@/shared/const/router';
 
-interface RequireAuthProps{
-    children:JSX.Element;
-    roles?:UserRole[];
+interface RequireAuthProps {
+    children: JSX.Element;
+    roles?: UserRole[];
 }
 export function RequireAuth({ children, roles }: RequireAuthProps) {
     const auth = useSelector(getUserAuthData);
@@ -17,7 +17,8 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
         if (!roles) {
             return true;
         }
-        return roles.some((requiredRole) => { // метод массива some работает так: вызывает колбек функцию и если она возвращает true, то останавливается
+        return roles.some((requiredRole) => {
+            // метод массива some работает так: вызывает колбек функцию и если она возвращает true, то останавливается
             // если текущее значение requiredRole(из массива которые передали в компонент roles) есть в массиве userRoles, то возвращаем true
             const hasRole = userRoles?.includes(requiredRole);
             return hasRole;
@@ -25,10 +26,18 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
     }, [roles, userRoles]);
 
     if (!auth) {
-        return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
+        return (
+            <Navigate to={getRouteMain()} state={{ from: location }} replace />
+        );
     }
     if (!hasRequiredRoles) {
-        return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
+        return (
+            <Navigate
+                to={getRouteForbidden()}
+                state={{ from: location }}
+                replace
+            />
+        );
     }
     return children;
 }

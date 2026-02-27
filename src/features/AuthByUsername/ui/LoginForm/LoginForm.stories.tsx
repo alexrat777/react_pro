@@ -15,18 +15,28 @@ const Template: ComponentStory<typeof LoginForm> = () => <LoginForm />;
 
 export const Primary = Template.bind({});
 
-Primary.decorators = [StoreDecorator({
-    loginForm: { username: 'username', password: 'password' },
-})];
+Primary.decorators = [
+    StoreDecorator({
+        loginForm: { username: 'username', password: 'password' },
+    }),
+];
 
 export const withError = Template.bind({});
 
-withError.decorators = [StoreDecorator({
-    loginForm: { username: 'username', password: 'password', error: 'ERROR' },
-})];
+withError.decorators = [
+    StoreDecorator({
+        loginForm: {
+            username: 'username',
+            password: 'password',
+            error: 'ERROR',
+        },
+    }),
+];
 
 export const Loading = Template.bind({});
 
-Loading.decorators = [StoreDecorator({
-    loginForm: { isLoading: true },
-})];
+Loading.decorators = [
+    StoreDecorator({
+        loginForm: { isLoading: true },
+    }),
+];

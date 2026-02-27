@@ -26,7 +26,7 @@ interface ProfileCardProps {
     onChangeCountry?: (value: Country) => void;
 }
 
-export const ProfileCard = (props:ProfileCardProps) => {
+export const ProfileCard = (props: ProfileCardProps) => {
     const {
         className,
         data,
@@ -45,15 +45,28 @@ export const ProfileCard = (props:ProfileCardProps) => {
     const { t } = useTranslation('profile');
     if (isLoading) {
         return (
-            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack
+                justify="center"
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <Loader />
             </HStack>
-
         );
     }
     if (error) {
         return (
-            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                justify="center"
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
@@ -61,14 +74,17 @@ export const ProfileCard = (props:ProfileCardProps) => {
                     align={TextAlign.CENTER}
                 />
             </HStack>
-
         );
     }
-    const mods:Mods = {
+    const mods: Mods = {
         [cls.editing]: !readonly,
     };
     return (
-        <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            gap="8"
+            max
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             {data?.avatar && (
                 <HStack max justify="center" className={cls.avatarWrapper}>
                     <Avatar src={data?.avatar} />

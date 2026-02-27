@@ -9,8 +9,7 @@ describe('getLoginUserName.test', () => {
         expect(getLoginUserName(state as StateSchema)).toEqual('User');
     });
     test('should return undefined', () => {
-        const state: DeepPartial<StateSchema> = {
-        };
+        const state: DeepPartial<StateSchema> = {};
         expect(getLoginUserName(state as StateSchema)).toEqual('');
     });
 });

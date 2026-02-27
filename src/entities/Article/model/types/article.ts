@@ -7,31 +7,32 @@ export interface ArticleBlockBase {
 }
 
 export interface ArticleCodeBlock extends ArticleBlockBase {
-    type:ArticleBlockType.CODE;
+    type: ArticleBlockType.CODE;
     code: string;
 }
 export interface ArticleImageBlock extends ArticleBlockBase {
-    type:ArticleBlockType.IMAGE;
+    type: ArticleBlockType.IMAGE;
     src: string;
     title: string;
-
 }
 export interface ArticleTextBlock extends ArticleBlockBase {
-    type:ArticleBlockType.TEXT;
+    type: ArticleBlockType.TEXT;
     paragraphs: string[];
     title?: string;
-
 }
-export type ArticleBlock = ArticleTextBlock | ArticleCodeBlock | ArticleImageBlock;
+export type ArticleBlock =
+    | ArticleTextBlock
+    | ArticleCodeBlock
+    | ArticleImageBlock;
 
 export interface Article {
     id: string;
     title: string;
-    user:User;
+    user: User;
     subtitle: string;
     img: string;
     views: number;
     createdAt: string;
-    type: ArticleType[],
+    type: ArticleType[];
     blocks: ArticleBlock[];
 }

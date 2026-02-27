@@ -1,31 +1,32 @@
 // сделано на основе https://redux-toolkit.js.org/api/createEntityAdapter    делаем адаптер для нормализации
-import {
-    createEntityAdapter,
-    createSlice,
-} from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';
-import {
-    fetchArticleRecommendations,
-} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { ArticleDetailsRecommendationsSchema } from '../type/ArticleDetailsRecommendationsSchema';
 
 const RecommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
 });
 
-export const getArticleRecommendations = RecommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsPage?.recommendations || RecommendationsAdapter.getInitialState(),
-);
+export const getArticleRecommendations =
+    RecommendationsAdapter.getSelectors<StateSchema>(
+        (state) =>
+            state.articleDetailsPage?.recommendations ||
+            RecommendationsAdapter.getInitialState(),
+    );
 
 const articleDetailsRecommendationsSlice = createSlice({
     name: 'articleDetailsRecommendationsSlice',
-    initialState: RecommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>({
-        isLoading: false,
-        error: undefined,
-        ids: [],
-        entities: {},
-    }),
+    initialState:
+        RecommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
+            {
+                isLoading: false,
+                error: undefined,
+                ids: [],
+                entities: {},
+            },
+        ),
     reducers: {},
     extraReducers: (builder) => {
         builder
@@ -33,10 +34,7 @@ const articleDetailsRecommendationsSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleRecommendations.fulfilled, (
-                state,
-                action,
-            ) => {
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.isLoading = false;
                 RecommendationsAdapter.setAll(state, action.payload);
             })
@@ -47,6 +45,5 @@ const articleDetailsRecommendationsSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articleDetailsRecommendationsReducer,
-} = articleDetailsRecommendationsSlice;
+export const { reducer: articleDetailsRecommendationsReducer } =
+    articleDetailsRecommendationsSlice;

@@ -1,7 +1,8 @@
 import { EntityState } from '@reduxjs/toolkit';
 import { Article } from '@/entities/Article';
 // наследуюем для того что бы можно было работать с нормальизованными данными extends EntityState<Comment>
-export interface ArticleDetailsRecommendationsSchema extends EntityState<Article>{
+export interface ArticleDetailsRecommendationsSchema
+    extends EntityState<Article> {
     isLoading?: boolean;
     error?: string;
 }

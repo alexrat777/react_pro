@@ -12,11 +12,7 @@ const BugButton = () => {
         if (error) throw new Error();
     }, [error]);
 
-    return (
-        <Button onClick={OnTrow}>
-            {t('Создать ошибку')}
-        </Button>
-    );
+    return <Button onClick={OnTrow}>{t('Создать ошибку')}</Button>;
 };
 
 export default BugButton;

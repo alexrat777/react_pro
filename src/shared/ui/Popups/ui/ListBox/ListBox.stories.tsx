@@ -9,7 +9,11 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
-        (Story) => <div style={{ padding: 150 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 150 }}>
+                <Story />
+            </div>
+        ),
     ],
 } as ComponentMeta<typeof ListBox>;
 const options = [
@@ -18,13 +22,14 @@ const options = [
     { value: '3', content: 'valuevaluevalue 3', disabled: true },
     { value: '4', content: 'valuevaluevalue 4' },
 ];
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: ComponentStory<typeof ListBox> = (args) => (
+    <ListBox {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
     items: options,
     value: '1',
-
 };
 export const readOnly = Template.bind({});
 readOnly.args = {
@@ -53,7 +58,6 @@ topRight.args = {
     value: undefined,
     label: 'Label',
     direction: 'top right',
-
 };
 export const topLeft = Template.bind({});
 topLeft.args = {

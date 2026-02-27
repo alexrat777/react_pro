@@ -17,10 +17,12 @@ Primary.args = {
     label: 'Выберите значение',
     options: [
         {
-            value: '123', content: 'Первый пункт',
+            value: '123',
+            content: 'Первый пункт',
         },
         {
-            value: '1234', content: 'Второй пункт',
+            value: '1234',
+            content: 'Второй пункт',
         },
     ],
 };

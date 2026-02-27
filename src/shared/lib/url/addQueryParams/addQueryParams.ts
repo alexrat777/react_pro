@@ -1,6 +1,7 @@
 export function getQueryParams(params: OptionalRecord<string, string>) {
     const searchParams = new URLSearchParams(window.location.search); // загружаем все парамтры из строки
-    Object.entries(params).forEach(([name, value]) => { // циклом проходим по params и добавляем их в объект searchParams (обогащаем)
+    Object.entries(params).forEach(([name, value]) => {
+        // циклом проходим по params и добавляем их в объект searchParams (обогащаем)
         if (value !== undefined) {
             searchParams.set(name, value);
         }

@@ -6,7 +6,7 @@ project.addSourceFilesAtPaths('src/**/*.ts');
 project.addSourceFilesAtPaths('src/**/*.tsx');
 
 const files = project.getSourceFiles();
-function isAbsolute(value:string) {
+function isAbsolute(value: string) {
     const layers = ['app', 'shared', 'entity', 'features', 'pages', 'widgets'];
     return layers.some((layer) => value.startsWith(layer));
 }

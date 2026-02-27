@@ -15,16 +15,16 @@ const options = [
     { value: Country.Kazakhstan, content: Country.Kazakhstan },
     { value: Country.Russia, content: Country.Russia },
     { value: Country.Ukraine, content: Country.Ukraine },
-
 ];
-export const CountrySelect = memo((props:CountrySelectProps) => {
-    const {
-        className, value, onChange, readOnly,
-    } = props;
+export const CountrySelect = memo((props: CountrySelectProps) => {
+    const { className, value, onChange, readOnly } = props;
     const { t } = useTranslation('profile');
-    const onChangeHandler = useCallback((value:string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Country);
+        },
+        [onChange],
+    );
 
     return (
         <ListBox

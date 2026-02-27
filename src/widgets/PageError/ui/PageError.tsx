@@ -6,7 +6,7 @@ import cls from './PageError.module.scss';
 interface PageErrorProps {
     className?: string;
 }
-const PageError = (props:PageErrorProps) => {
+const PageError = (props: PageErrorProps) => {
     const { t } = useTranslation();
     const reloadPage = () => {
         // eslint-disable-next-line no-restricted-globals
@@ -16,9 +16,7 @@ const PageError = (props:PageErrorProps) => {
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <p>{t('Произошла непредвиденная ошибка')}</p>
-            <Button onClick={reloadPage}>
-                {t('Обновить страницу')}
-            </Button>
+            <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
         </div>
     );
 };

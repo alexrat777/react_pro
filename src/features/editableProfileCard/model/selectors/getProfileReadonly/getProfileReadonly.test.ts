@@ -11,8 +11,7 @@ describe('getProfileReadonly.test', () => {
         expect(getProfileReadonly(state as StateSchema)).toEqual(true);
     });
     test('should return undefined', () => {
-        const state: DeepPartial<StateSchema> = {
-        };
+        const state: DeepPartial<StateSchema> = {};
         expect(getProfileReadonly(state as StateSchema)).toEqual(undefined);
     });
 });

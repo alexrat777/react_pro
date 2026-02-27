@@ -1,11 +1,9 @@
-import {
-    useCallback, useEffect, useRef, useState,
-} from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface UseModalProps {
     onClose?: () => void;
     isOpen: boolean;
-    animationDelay:number;
+    animationDelay: number;
 }
 /**
  * Переиспользуемый хук для модальных компонентов (drawer/modal)
@@ -30,11 +28,14 @@ export function useModal({ onClose, isOpen, animationDelay }: UseModalProps) {
             }, animationDelay);
         }
     }, [animationDelay, onClose]);
-    const onKeyDown = useCallback((e: globalThis.KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            close();
-        }
-    }, [close]);
+    const onKeyDown = useCallback(
+        (e: globalThis.KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                close();
+            }
+        },
+        [close],
+    );
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);

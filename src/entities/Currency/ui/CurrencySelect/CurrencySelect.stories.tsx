@@ -10,6 +10,8 @@ export default {
     },
 } as ComponentMeta<typeof CurrencySelect>;
 
-const Template: ComponentStory<typeof CurrencySelect> = () => <CurrencySelect />;
+const Template: ComponentStory<typeof CurrencySelect> = () => (
+    <CurrencySelect />
+);
 
 export const Primary = Template.bind({});

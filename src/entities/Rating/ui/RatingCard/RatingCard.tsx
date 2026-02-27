@@ -15,8 +15,8 @@ interface RatingCardProps {
     title: string;
     feedbackTitle?: string;
     hasFeedback?: boolean;
-    onCancel?: (starsCount:number) => void;
-    onAccept?: (starsCount:number, feedback?:string) => void;
+    onCancel?: (starsCount: number) => void;
+    onAccept?: (starsCount: number, feedback?: string) => void;
     rate?: number;
 }
 
@@ -34,16 +34,19 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [starCount, setStarCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
-    const onSelectStars = useCallback((selectedStarCount:number) => {
-        // установить выбраное количество звезд
-        setStarCount(selectedStarCount);
-        // если нужен фитбек то показать модалку иначе запустить колбек onAccept с данными о выбранных звездах
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(starCount);
-        }
-    }, [hasFeedback, onAccept, starCount]);
+    const onSelectStars = useCallback(
+        (selectedStarCount: number) => {
+            // установить выбраное количество звезд
+            setStarCount(selectedStarCount);
+            // если нужен фитбек то показать модалку иначе запустить колбек onAccept с данными о выбранных звездах
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(starCount);
+            }
+        },
+        [hasFeedback, onAccept, starCount],
+    );
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
         onAccept?.(starCount, feedback);
@@ -55,9 +58,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     }, [onCancel, starCount]);
     const modalContent = (
         <>
-            <Text
-                title={feedbackTitle}
-            />
+            <Text title={feedbackTitle} />
             <Input
                 data-testid="RatingCard.Input"
                 value={feedback}
@@ -66,13 +67,16 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 maxWidth
             />
         </>
-
     );
     return (
         <Card className={className} max data-testid="RatingCard">
             <VStack align="center" gap="8">
                 <Text title={starCount ? t('Спасибо за оценку!') : title} />
-                <StarRating selectedStars={starCount} size={40} onSelect={onSelectStars} />
+                <StarRating
+                    selectedStars={starCount}
+                    size={40}
+                    onSelect={onSelectStars}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
@@ -94,7 +98,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
                             </Button>
                         </HStack>
                     </VStack>
-
                 </Modal>
             </BrowserView>
             <MobileView>
@@ -111,7 +114,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     </VStack>
                 </Drawer>
             </MobileView>
-
         </Card>
     );
 });

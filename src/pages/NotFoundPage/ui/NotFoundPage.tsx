@@ -8,11 +8,14 @@ interface NotFoundPageProps {
     className?: string;
 }
 
-const NotFoundPage = memo((props:NotFoundPageProps) => {
+const NotFoundPage = memo((props: NotFoundPageProps) => {
     const { className } = props;
     const { t } = useTranslation();
     return (
-        <Page className={classNames(cls.NotFoundPage, {}, [className])} data-testid="NotFoundPage">
+        <Page
+            className={classNames(cls.NotFoundPage, {}, [className])}
+            data-testid="NotFoundPage"
+        >
             {t('Страница не найдена')}
         </Page>
     );

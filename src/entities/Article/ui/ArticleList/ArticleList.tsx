@@ -12,15 +12,20 @@ interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
-    view?: ArticleView,
-    target?:HTMLAttributeAnchorTarget;
+    view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
-    .fill(null)
-    .map((item, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <ArticleListItemSkeleton className={cls.card} view={view} key={index} />
-    ));
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.SMALL ? 9 : 3)
+        .fill(null)
+        .map((item, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <ArticleListItemSkeleton
+                className={cls.card}
+                view={view}
+                key={index}
+            />
+        ));
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
@@ -28,10 +33,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
         isLoading,
         view = ArticleView.SMALL,
         target,
-
     } = props;
     const { t } = useTranslation();
-    const renderArticle = (article:Article) => (
+    const renderArticle = (article: Article) => (
         <ArticleListItem
             view={view}
             article={article}
@@ -43,7 +47,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         );
@@ -53,9 +62,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
             data-testid="ArticleList"
         >
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : null}
+            {articles.length > 0 ? articles.map(renderArticle) : null}
             {isLoading && getSkeletons(view)}
         </div>
     );

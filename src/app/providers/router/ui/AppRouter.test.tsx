@@ -1,7 +1,11 @@
 import { screen } from '@testing-library/react';
 import { AppRouter } from './AppRouter';
 import { ComponentRender } from '@/shared/lib/helpers/tests/componentRender/componentRender';
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteProfile,
+} from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
 
 describe('app/router/AppRouter', () => {
@@ -24,7 +28,6 @@ describe('app/router/AppRouter', () => {
     test('Редирект не авторизованного пользователя', async () => {
         ComponentRender(<AppRouter />, {
             route: getRouteProfile('1'),
-
         });
 
         const page = await screen.findByTestId('MainPage'); // поиск элемента по TestId асинхронно

@@ -29,25 +29,14 @@ export const Counter = () => {
     const { t } = useTranslation();
     return (
         <div>
-            <h1 data-testid="value-title">
-                {counterValue.value}
-            </h1>
-            <Button
-                onClick={increment}
-                data-testid="increment-btn"
-            >
+            <h1 data-testid="value-title">{counterValue.value}</h1>
+            <Button onClick={increment} data-testid="increment-btn">
                 {t('handleIncrement')}
             </Button>
-            <Button
-                onClick={handleDecrement}
-                data-testid="decrement-btn"
-            >
+            <Button onClick={handleDecrement} data-testid="decrement-btn">
                 {t('decrement')}
             </Button>
-            <Button
-                onClick={handleAdd}
-                data-testid="Add5-btn"
-            >
+            <Button onClick={handleAdd} data-testid="Add5-btn">
                 {t('Add5')}
             </Button>
         </div>

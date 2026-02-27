@@ -17,11 +17,13 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {
-    placeholder: 'Type text', value: '1234567',
+    placeholder: 'Type text',
+    value: '1234567',
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-    placeholder: 'Type text', value: '1234567',
+    placeholder: 'Type text',
+    value: '1234567',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -22,7 +22,8 @@ import {
 } from '@/shared/const/router';
 import { AppRouteProps } from '@/shared/types/router';
 
-export const routeConfig: Record<AppRoutes, AppRouteProps> = { // AppRouteProps вместо  RouteProps
+export const routeConfig: Record<AppRoutes, AppRouteProps> = {
+    // AppRouteProps вместо  RouteProps
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
         element: <MainPage />,

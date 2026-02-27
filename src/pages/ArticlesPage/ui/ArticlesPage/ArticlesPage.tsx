@@ -2,7 +2,9 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import DynamicModuleLoader, { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import DynamicModuleLoader, {
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
@@ -32,7 +34,8 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        if (__PROJECT__ !== 'storybook') dispatch(initArticlePage(searchParams));
+        if (__PROJECT__ !== 'storybook')
+            dispatch(initArticlePage(searchParams));
     });
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
@@ -45,7 +48,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
-
     );
 };
 

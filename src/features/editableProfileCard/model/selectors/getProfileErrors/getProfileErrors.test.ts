@@ -11,8 +11,7 @@ describe('getProfileErrors.test', () => {
         expect(getProfileErrors(state as StateSchema)).toEqual('123');
     });
     test('should return undefined', () => {
-        const state: DeepPartial<StateSchema> = {
-        };
+        const state: DeepPartial<StateSchema> = {};
         expect(getProfileErrors(state as StateSchema)).toEqual(undefined);
     });
 });

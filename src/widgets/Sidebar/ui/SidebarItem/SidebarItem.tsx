@@ -7,29 +7,26 @@ import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
-    item:SidebarItemType;
+    item: SidebarItemType;
     collapsed: boolean;
 }
 
-const SidebarItem = (props:SidebarItemProps) => {
+const SidebarItem = (props: SidebarItemProps) => {
     const { item, collapsed } = props;
     const { t } = useTranslation();
     const isAuth = useSelector(getUserAuthData); // проверяем залогинен ли
-    if (item.authOnly && !isAuth) { return null; }
+    if (item.authOnly && !isAuth) {
+        return null;
+    }
     return (
         <AppLink
             className={classNames(cls.item, { [cls.collapsed]: collapsed })}
             theme={AppLinkThem.SECONDARY}
             to={item.path}
         >
-            <item.Icon
-                className={cls.icon}
-            />
-            <span className={cls.link}>
-                {t(item.text)}
-            </span>
+            <item.Icon className={cls.icon} />
+            <span className={cls.link}>{t(item.text)}</span>
         </AppLink>
-
     );
 };
 

@@ -12,20 +12,21 @@ interface ProfilePageProps {
     className?: string;
 }
 
-const ProfilePage = memo((props:ProfilePageProps) => {
+const ProfilePage = memo((props: ProfilePageProps) => {
     const { className } = props;
     const { t } = useTranslation('profile');
-    const { id } = useParams<{id:string}>();
+    const { id } = useParams<{ id: string }>();
     if (!id) return null;
     return (
-        <Page className={classNames('', {}, [className])} data-testid="ProfilePage">
+        <Page
+            className={classNames('', {}, [className])}
+            data-testid="ProfilePage"
+        >
             <VStack max gap="16">
                 <EditableProfileCard id={id} />
                 <ProfileRating profileId={id} />
             </VStack>
-
         </Page>
-
     );
 });
 

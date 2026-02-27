@@ -14,7 +14,7 @@ const sharedUiDirectory = project.getDirectory(pathUrl);
 // массив указателей на дерриктории внутри папки
 const componentsDirs = sharedUiDirectory?.getDirectories();
 
-function isAbsolute(value:string) {
+function isAbsolute(value: string) {
     const layers = ['app', 'shared', 'entity', 'features', 'pages', 'widgets'];
     return layers.some((layer) => value.startsWith(layer));
 }
@@ -27,7 +27,9 @@ componentsDirs?.forEach((directory) => {
     if (!indexFile) {
         // если нет, то создаем
         const sourceCode = `export * from './${directory.getBaseName()}';`;
-        const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+        const file = directory.createSourceFile(indexFilePath, sourceCode, {
+            overwrite: true,
+        });
         file.save();
     }
 });

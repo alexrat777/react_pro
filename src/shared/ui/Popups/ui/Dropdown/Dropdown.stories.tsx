@@ -10,11 +10,17 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
-        (Story) => <div style={{ padding: 150, display: 'flex' }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 150, display: 'flex' }}>
+                <Story />
+            </div>
+        ),
     ],
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
+const Template: ComponentStory<typeof Dropdown> = (args) => (
+    <Dropdown {...args} />
+);
 const items = [
     { content: 'first' },
     { content: 'second' },
@@ -36,7 +42,6 @@ topRight.args = {
     trigger: <Button>Open</Button>,
     items,
     direction: 'top right',
-
 };
 export const topLeft = Template.bind({});
 topLeft.args = {

@@ -12,15 +12,19 @@ export default {
     // decorators: [withMock], //  декоратор для мока подгрузки данных через апи РТК query   на новой версии сторибук не нужен
 } as ComponentMeta<typeof ProfileRating>;
 
-const Template: ComponentStory<typeof ProfileRating> = (args) => <ProfileRating {...args} />;
+const Template: ComponentStory<typeof ProfileRating> = (args) => (
+    <ProfileRating {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = { profileId: '1' };
-Primary.decorators = [StoreDecorator({
-    user: {
-        authData: { id: '1' },
-    },
-})];
+Primary.decorators = [
+    StoreDecorator({
+        user: {
+            authData: { id: '1' },
+        },
+    }),
+];
 // замокать данные к серверу
 Primary.parameters = {
     mockData: [
@@ -32,18 +36,19 @@ Primary.parameters = {
                 {
                     rate: 4,
                 },
-
             ],
         },
     ],
 };
 export const WhithOutRate = Template.bind({});
 WhithOutRate.args = { profileId: '1' };
-WhithOutRate.decorators = [StoreDecorator({
-    user: {
-        authData: { id: '1' },
-    },
-})];
+WhithOutRate.decorators = [
+    StoreDecorator({
+        user: {
+            authData: { id: '1' },
+        },
+    }),
+];
 // замокать данные к серверу
 WhithOutRate.parameters = {
     mockData: [

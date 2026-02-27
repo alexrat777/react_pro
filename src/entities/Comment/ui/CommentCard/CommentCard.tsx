@@ -18,11 +18,7 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
-    const {
-        className,
-        comment,
-        isLoading,
-    } = props;
+    const { className, comment, isLoading } = props;
     const { t } = useTranslation();
     if (isLoading) {
         return (
@@ -30,11 +26,18 @@ export const CommentCard = memo((props: CommentCardProps) => {
                 data-testid="CommentCard.Loading"
                 gap="8"
                 max
-                className={classNames(cls.CommentCard, {}, [className, cls.isLoading])}
+                className={classNames(cls.CommentCard, {}, [
+                    className,
+                    cls.isLoading,
+                ])}
             >
                 <div className={cls.header}>
                     <Skeleton height={30} width={30} borderRadius="50%" />
-                    <Skeleton className={cls.username} height={16} width={100} />
+                    <Skeleton
+                        className={cls.username}
+                        height={16}
+                        width={100}
+                    />
                 </div>
                 <Skeleton className={cls.text} width="100%" height="50px" />
             </VStack>
@@ -48,10 +51,15 @@ export const CommentCard = memo((props: CommentCardProps) => {
             max
             className={classNames(cls.CommentCard, {}, [className])}
         >
-            <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
-                {comment.user.avatar
-                    ? <Avatar size={30} src={comment.user.avatar} />
-                    : <Avatar size={30} src={AvatarImgDefault} />}
+            <AppLink
+                to={getRouteProfile(comment.user.id)}
+                className={cls.header}
+            >
+                {comment.user.avatar ? (
+                    <Avatar size={30} src={comment.user.avatar} />
+                ) : (
+                    <Avatar size={30} src={AvatarImgDefault} />
+                )}
                 <Text className={cls.username} title={comment.user.username} />
             </AppLink>
             <Text className={cls.text} text={comment.text} />

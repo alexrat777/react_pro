@@ -1,7 +1,13 @@
 // загрузка линивая библиотек
 
 import {
-    createContext, ReactNode, useContext, useEffect, useMemo, useRef, useState,
+    createContext,
+    ReactNode,
+    useContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
 } from 'react';
 
 // получаем типы библиотек
@@ -29,7 +35,7 @@ export const useAnimationLibs = () => {
     // обернуть что б не useContext использовать а напрямую AnimationContextPayload через развертывание
     return useContext(AnimationContext) as Required<AnimationContextPayload>; // скастовали для удобства, но надо всегда проверять isLoading!
 };
-export const AnimationProvider = ({ children }: {children: ReactNode}) => {
+export const AnimationProvider = ({ children }: { children: ReactNode }) => {
     // создаем рефы что бы минимизировать перерисовку и получать доступ при рендеренге!!
     const SpringRef = useRef<SpringType>();
     const GestureRef = useRef<GestureType>();
@@ -44,15 +50,16 @@ export const AnimationProvider = ({ children }: {children: ReactNode}) => {
         });
     }, []);
     // мемозируем для перересовки
-    const value = useMemo(() => ({
-        Gesture: GestureRef.current,
-        Spring: SpringRef.current,
-        isLoaded,
-    }), [isLoaded]);
+    const value = useMemo(
+        () => ({
+            Gesture: GestureRef.current,
+            Spring: SpringRef.current,
+            isLoaded,
+        }),
+        [isLoaded],
+    );
     return (
-        <AnimationContext.Provider
-            value={value}
-        >
+        <AnimationContext.Provider value={value}>
             {children}
         </AnimationContext.Provider>
     );

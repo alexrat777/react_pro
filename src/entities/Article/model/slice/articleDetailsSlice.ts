@@ -11,8 +11,7 @@ const initialState: ArticleDetailsSchema = {
 export const articleDetailsSlice = createSlice({
     name: 'articleDetails',
     initialState,
-    reducers: {
-    },
+    reducers: {},
     // для асинхронного редюсера
     extraReducers: (builder) => {
         builder
@@ -22,7 +21,7 @@ export const articleDetailsSlice = createSlice({
             })
             .addCase(
                 fetchArticleById.fulfilled,
-                (state, action:PayloadAction<Article>) => {
+                (state, action: PayloadAction<Article>) => {
                     state.isLoading = false;
                     state.data = action.payload;
                 },

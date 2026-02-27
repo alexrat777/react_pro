@@ -2,7 +2,9 @@ import { TestAsyncThunk } from '@/shared/lib/helpers/tests/TestAsyncThunk/TestAs
 import { fetchNextArticlesPage } from '../../services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { fetchArticleList } from '../../services/fetchArticleList/fetchArticleList';
 
-jest.mock('pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList');
+jest.mock(
+    'pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList',
+);
 describe('fetchProfileData.test', () => {
     test('success fetch', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
@@ -12,7 +14,6 @@ describe('fetchProfileData.test', () => {
                 entities: {},
                 limit: 5,
                 hasMore: true,
-
             },
         });
         await thunk.callThunk();
@@ -28,7 +29,6 @@ describe('fetchProfileData.test', () => {
                 entities: {},
                 limit: 5,
                 hasMore: false,
-
             },
         });
         await thunk.callThunk();
@@ -43,7 +43,6 @@ describe('fetchProfileData.test', () => {
                 entities: {},
                 limit: 5,
                 hasMore: true,
-
             },
         });
         await thunk.callThunk();

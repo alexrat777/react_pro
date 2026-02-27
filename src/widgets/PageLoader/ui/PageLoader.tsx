@@ -6,7 +6,7 @@ interface PageLoaderProps {
     className?: string;
 }
 
-const PageLoader = (props:PageLoaderProps) => {
+const PageLoader = (props: PageLoaderProps) => {
     const { className } = props;
     return (
         <div className={classNames(cls.PageLoader, {}, [className])}>

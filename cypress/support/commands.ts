@@ -34,12 +34,12 @@
 //     }
 //   }
 // }
-import {USER_LOCALSTORAGE_KEY} from "@/shared/const/localstorage";
-import * as commonCommands from "./commands/common";
-import * as profileCommands from "./commands/profile";
-import * as articleCommands from "./commands/article";
-import * as commentsCommand from "./commands/comments";
-import * as ratingCommand from "./commands/rating";
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import * as commonCommands from './commands/common';
+import * as profileCommands from './commands/profile';
+import * as articleCommands from './commands/article';
+import * as commentsCommand from './commands/comments';
+import * as ratingCommand from './commands/rating';
 Cypress.Commands.addAll(commonCommands);
 Cypress.Commands.addAll(profileCommands);
 Cypress.Commands.addAll(articleCommands);

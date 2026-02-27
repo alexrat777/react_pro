@@ -5,7 +5,9 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import Input from '@/shared/ui/Input';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
-import DynamicModuleLoader, { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import DynamicModuleLoader, {
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUserName } from '../../model/selectors/getLoginUserName/getLoginUserName';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -19,22 +21,29 @@ export interface LoginFormProps {
     className?: string;
     onSuccess?: () => void;
 }
-const initialReducers: ReducersList = { // постоянный не будет пересчитывать и перересовка лишняя
+const initialReducers: ReducersList = {
+    // постоянный не будет пересчитывать и перересовка лишняя
     loginForm: loginReducer,
 };
-const LoginForm = memo((props:LoginFormProps) => {
+const LoginForm = memo((props: LoginFormProps) => {
     const { className, onSuccess } = props;
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
-    const onChangeUsername = useCallback((value:string) => {
-        // деспатчим экшен изменения значения username стейта логин формы
-        dispatch(loginActions.setUsername(value));
-    }, [dispatch]);
-    const onChangePassword = useCallback((value:string) => {
-        // деспатчим экшен изменения значения пароля стейта логин формы
-        dispatch(loginActions.setPassword(value));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            // деспатчим экшен изменения значения username стейта логин формы
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch],
+    );
+    const onChangePassword = useCallback(
+        (value: string) => {
+            // деспатчим экшен изменения значения пароля стейта логин формы
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
     // получаем стейт сторы
     const username = useSelector(getLoginUserName);
@@ -47,13 +56,15 @@ const LoginForm = memo((props:LoginFormProps) => {
         if (result.meta.requestStatus === 'fulfilled') onSuccess?.();
     }, [dispatch, password, username, onSuccess]);
     return (
-        <DynamicModuleLoader
-            removeAfterUnmount
-            reducers={initialReducers}
-        >
+        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
-                {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+                {error && (
+                    <Text
+                        text={t('Вы ввели неверный логин или пароль')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     autoFocus
                     placeholder={t('Введите логин')}
@@ -79,7 +90,6 @@ const LoginForm = memo((props:LoginFormProps) => {
                 </Button>
             </div>
         </DynamicModuleLoader>
-
     );
 });
 

@@ -1,6 +1,4 @@
-import React, {
-    Suspense, useEffect,
-} from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { AppRouter } from './providers/router';

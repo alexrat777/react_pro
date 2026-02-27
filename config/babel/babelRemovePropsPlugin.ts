@@ -1,6 +1,6 @@
 import { PluginItem } from '@babel/core';
 /// https://astexplorer.net/  -  ноды дерева кода
-export default function ():PluginItem {
+export default function (): PluginItem {
     return {
         visitor: {
             Program(path, state) {

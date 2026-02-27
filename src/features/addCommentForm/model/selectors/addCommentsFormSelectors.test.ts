@@ -12,8 +12,7 @@ describe('addCommentsFormSelectors.test', () => {
         expect(getAddCommentFormText(state as StateSchema)).toEqual('comment');
     });
     test('should return for text undefined', () => {
-        const state: DeepPartial<StateSchema> = {
-        };
+        const state: DeepPartial<StateSchema> = {};
         expect(getAddCommentFormText(state as StateSchema)).toEqual('');
     });
 
@@ -24,8 +23,7 @@ describe('addCommentsFormSelectors.test', () => {
         expect(getAddCommentFormError(state as StateSchema)).toEqual('error');
     });
     test('should return for error undefined', () => {
-        const state: DeepPartial<StateSchema> = {
-        };
+        const state: DeepPartial<StateSchema> = {};
         expect(getAddCommentFormError(state as StateSchema)).toEqual(undefined);
     });
 });

@@ -10,10 +10,11 @@ export default {
         backgroundColor: { control: 'color' },
     },
     // decorators: [withMock], //  декоратор для мока подгрузки данных через апи РТК query
-
 } as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
+const Template: ComponentStory<typeof NotificationList> = (args) => (
+    <NotificationList {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};
