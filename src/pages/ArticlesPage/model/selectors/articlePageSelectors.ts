@@ -1,5 +1,6 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import { buildSelector } from '@/shared/lib/store';
 
 export const getArticlesPageError = (state: StateSchema) =>
     state.articlesPage?.error;
@@ -23,3 +24,8 @@ export const getArticlesPageSearch = (state: StateSchema) =>
     state.articlesPage?.search ?? '';
 export const getArticlesPageType = (state: StateSchema) =>
     state.articlesPage?.type ?? ArticleType.ALL;
+
+// селектор с аргументами
+export const [useArticleItemById] = buildSelector(
+    (state, id: string) => state.articlesPage?.entities[id],
+);
