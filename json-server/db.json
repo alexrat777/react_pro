@@ -622,6 +622,10 @@
             "username": "admin",
             "password": "123",
             "role": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKgMZNV7v0zJijn1YXQKPFO8hn_-Fr4d94uGbxXPk09YiShJf4=s288-c-no"
         },
         {
@@ -629,13 +633,21 @@
             "username": "user",
             "password": "123",
             "role": ["USER"],
-            "avatar": "gfdgdsfg"
+            "avatar": "gfdgdsfg",
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            }
         },
         {
             "id": "3",
             "username": "manager",
             "password": "123",
             "role": ["MANAGER"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": false
+            },
             "avatar": "https://sectricity.com/wp-content/uploads/2023/05/Hacker-Cyber-Security-Internet-Sectricity.jpg"
         },
         {
