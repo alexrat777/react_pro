@@ -32,7 +32,10 @@ module.exports = {
         // 'react/jsx-indent-props': [2, 4],
         'unused-imports/no-unused-imports': 'error',
         // indent: [2, 4],
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['.js', '.jsx', '.tsx'] },
+        ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -44,12 +47,24 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-            ignoreAttribute: [
-                'borderRadius', 'as', 'to', 'data-testid', 'target', 'justify', 'align', 'direction', 'gap', 'role',
-            ],
-        }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: [
+                    'borderRadius',
+                    'as',
+                    'to',
+                    'data-testid',
+                    'target',
+                    'justify',
+                    'align',
+                    'direction',
+                    'gap',
+                    'role',
+                ],
+            },
+        ],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
@@ -64,7 +79,11 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
             },
         ],
         'alex-lex-plugin/layer-imports': [
@@ -74,6 +93,7 @@ module.exports = {
                 ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
             },
         ],
+        'react/no-unstable-nested-components': 'warning',
     },
     globals: {
         __IS_DEV__: true,
