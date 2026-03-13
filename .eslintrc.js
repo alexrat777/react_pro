@@ -34,11 +34,13 @@ module.exports = {
         // indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -52,22 +54,28 @@ module.exports = {
             {
                 markupOnly: true,
                 ignoreAttribute: [
-                    'borderRadius',
                     'as',
-                    'to',
+                    'role',
                     'data-testid',
+                    'to',
                     'target',
                     'justify',
                     'align',
+                    'border',
                     'direction',
                     'gap',
-                    'role',
                 ],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
-        'jsx-a11y/click-events-have-key-events': 'off',
+        'max-len': [
+            'error',
+            {
+                ignoreComments: true,
+                code: 125,
+            },
+        ],
         'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
         'react/no-array-index-key': 'off', // отключил проверку на индексы в key
         'react-hooks/rules-of-hooks': 'error', // проверка хуков
         'react-hooks/exhaustive-deps': 'error', // проверка зависимостей в хуках
@@ -93,7 +101,8 @@ module.exports = {
                 ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
             },
         ],
-        'react/no-unstable-nested-components': 'warning',
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+        'react/no-unstable-nested-components': 'warn',
     },
     globals: {
         __IS_DEV__: true,

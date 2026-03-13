@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from '../../../../shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
-import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
-import { useJsonSettings, useJsonSettingsByKey } from '@/entities/User';
+import { useJsonSettings } from '@/entities/User';
 
 // (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 // 2 контекст сначала создается контекст провайдер
@@ -11,16 +10,20 @@ interface ThemeProviderProps {
     children: React.ReactNode;
 }
 const ThemeProvider = (props: ThemeProviderProps) => {
-    const { theme: defaultTheme = Theme.LIGHT } = useJsonSettings();
-    const [isThemeInited, setIsThemeInited] = useState(false);
     const { initialTheme, children } = props;
-    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+    const { theme: defaultTheme } = useJsonSettings();
+    const [isThemeInited, setIsThemeInited] = useState(false);
+
+    const [theme, setTheme] = useState<Theme>(
+        initialTheme || defaultTheme || Theme.LIGHT,
+    );
+
     useEffect(() => {
-        if (isThemeInited) {
+        if (!isThemeInited && defaultTheme) {
             setTheme(defaultTheme);
             setIsThemeInited(true);
         }
-    }, [defaultTheme]);
+    }, [defaultTheme, isThemeInited]);
     //    useMemo нужно для оптимизации памяти меняется только когда теме меняется
     const defaultProps = useMemo(
         () => ({

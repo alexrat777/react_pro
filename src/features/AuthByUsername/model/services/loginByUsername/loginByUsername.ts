@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User, userActions } from '@/entities/User';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
 interface LoginByUsernameProps {
     username: string;
@@ -19,18 +18,17 @@ export const loginByUsername = createAsyncThunk<
             throw new Error();
         }
 
-        // для удаления пароля это не нужно в проде т.е. тут будет токен
-        const user = response.data;
-        interface User_pass {
-            id: string;
-            username: string;
-            password: string;
-        }
-        // @ts-ignore
-        delete (user as User_pass).password;
+        // // для удаления пароля это не нужно в проде т.е. тут будет токен
+        // const user = response.data;
+        // interface User_pass {
+        //     id: string;
+        //     username: string;
+        //     password: string;
+        // }
+        // // @ts-ignore
+        // delete (user as User_pass).password;
 
-        localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(user)); // тут должен быть токен
-        dispatch(userActions.setAuthData(response.data));
+        dispatch(userActions.setAuthData(response.data)); // сохранение данных о пользователе
         return response.data;
     } catch (e) {
         console.log(e);
