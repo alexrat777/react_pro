@@ -1,12 +1,13 @@
 import { rtkApi } from '@/shared/api/rtkAPI';
 import { User } from '../model/types/user';
-import { JsonSettings } from '@/entities/User/model/types/jsonSettings';
+import { JsonSettings } from '../model/types/jsonSettings';
+
 interface SetJsonSettingsArg {
     userId: string;
     jsonSettings: JsonSettings;
 }
 export const userApi = rtkApi.injectEndpoints({
-    //что делаем получаем или мутируем или создаем
+    // что делаем получаем или мутируем или создаем
     endpoints: (build) => ({
         setJsonSettings: build.mutation<User, SetJsonSettingsArg>({
             query: ({ userId, jsonSettings }) => ({
@@ -17,10 +18,10 @@ export const userApi = rtkApi.injectEndpoints({
                 },
             }),
         }),
-        //запрос подгружающий данные по id gjkmpjdfntkz
+        // запрос подгружающий данные по id gjkmpjdfntkz
         getUserDataById: build.query<User, string>({
             query: (userId) => ({
-                url: '/users/' + userId,
+                url: `/users/${userId}`,
                 method: 'GET', // метод чтения
             }),
         }),

@@ -1,6 +1,6 @@
 import { UserRole } from '../const/userConst';
 import { FeatureFlags } from '@/shared/types/featureFlags';
-import { JsonSettings } from '@/entities/User/model/types/jsonSettings';
+import { JsonSettings } from './jsonSettings';
 
 export interface User {
     id: string;

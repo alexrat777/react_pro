@@ -4,9 +4,8 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { getUserInit, userActions } from '@/entities/User';
+import { getUserInit , initAuthData } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>

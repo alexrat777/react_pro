@@ -1,5 +1,5 @@
 import { buildSelector } from '@/shared/lib/store';
-import { JsonSettings } from '@/entities/User/model/types/jsonSettings';
+import { JsonSettings } from '../../types/jsonSettings';
 
 const defaultJsonSettings: JsonSettings = {};
 export const [useJsonSettings, getJsonSettings] = buildSelector(
@@ -7,5 +7,5 @@ export const [useJsonSettings, getJsonSettings] = buildSelector(
 );
 export const [useJsonSettingsByKey, getJsonSettingsByKey] = buildSelector(
     (state, key: keyof JsonSettings) =>
-        state.user?.authData?.jsonSettings?.[key], //по ключу достаем значение
+        state.user?.authData?.jsonSettings?.[key], // по ключу достаем значение
 );
