@@ -23,7 +23,7 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
                 dispatch(saveJsonSettings({ theme: newTheme })); // с помощью экстраредюсера saveJsonSettings сохраняем данные о новой теме
             });
         });
-    }, [toggleTheme]);
+    }, [dispatch, toggleTheme]);
     return (
         <Button
             theme={ButtonTheme.CLEAR}
