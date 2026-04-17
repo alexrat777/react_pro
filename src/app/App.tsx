@@ -4,10 +4,12 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { getUserInit , initAuthData } from '@/entities/User';
+import { getUserInit, initAuthData } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 
@@ -24,16 +26,31 @@ const App = () => {
         return <PageLoader />;
     }
     return (
-        <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                {/* суспенд для переводов подгрузки */}
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {initedAuth && <AppRouter />}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            off={
+                <div className={classNames('app', {}, [theme])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            <AppRouter />
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            on={
+                <div className={classNames('app_redesigned', {}, [theme])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            content={<AppRouter />}
+                            sidebar={<Sidebar />}
+                        />
+                    </Suspense>
+                </div>
+            }
+        />
     );
 };
 
