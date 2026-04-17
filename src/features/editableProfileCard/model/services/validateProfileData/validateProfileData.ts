@@ -21,7 +21,8 @@ export const ValidateProfileData = (profile?: Profile) => {
     }
     // eslint-disable-next-line
     const urlRegex =
-        /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+        /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)$/;
+    // /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
 
     if (!avatar || !urlRegex.test(avatar)) {
         errors.push(ValidateProfileError.INCORRECT_USER_AVATAR);
