@@ -3,6 +3,7 @@
 }
 
 .gradientBig {
+    pointer-events: none; // слой градиента не кликабельный
     position: absolute;
     background:
         radial-gradient(
@@ -21,6 +22,7 @@
 }
 
 .gradientSmall {
+    pointer-events: none; // слой градиента не кликабельный
     position: absolute;
     width: 200px;
     height: 200px;
