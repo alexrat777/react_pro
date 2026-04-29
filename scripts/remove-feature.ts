@@ -130,14 +130,15 @@ files.forEach((sourceFile) => {
     sourceFile.forEachDescendant((node) => {
         // ищим в ноде потомках  тип ноды SyntaxKind.CallExpression и проверяем что функция toggleFeatures в функции isToggleFunction
         if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-            replaceToggleFunction(node);
+            return replaceToggleFunction(node);
         }
         if (
             node.isKind(SyntaxKind.JsxSelfClosingElement) &&
             isToggleComponent(node)
         ) {
-            replaceComponent(node);
+            return replaceComponent(node);
         }
+        return null;
     });
 });
 
