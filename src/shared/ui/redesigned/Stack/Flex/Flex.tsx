@@ -41,10 +41,6 @@ const directionClasses: Record<FlexDirection, string> = {
     row: cls.directionRow,
     column: cls.directionColumn,
 };
-/**
- * Устарел, используем новые из папки redesigned
- * @deprecated
- */
 export const Flex = (props: FlexProps) => {
     const {
         className,

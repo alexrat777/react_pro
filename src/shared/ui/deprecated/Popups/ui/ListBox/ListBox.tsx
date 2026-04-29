@@ -6,7 +6,7 @@ import CheckIcon from '@/shared/assets/icons/check-mark.svg';
 import { classNames, Mods } from '@/shared/lib/helpers/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import { Button } from '../../../Button/Button';
-import { HStack } from '../../../Stack';
+import { HStack } from '../../../../redesigned/Stack';
 import { Icon } from '../../../Icon/Icon';
 import cls from './ListBox.module.scss';
 import { mapDirectionClass } from '../../styles/const';
