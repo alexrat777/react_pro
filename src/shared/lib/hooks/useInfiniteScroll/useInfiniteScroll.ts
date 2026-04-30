@@ -3,7 +3,7 @@ import { MutableRefObject, useEffect } from 'react';
 export interface UseInfiniteScrollOptions {
     callback?: () => void;
     triggerRef: MutableRefObject<HTMLElement>;
-    wrapperRef: MutableRefObject<HTMLElement>;
+    wrapperRef?: MutableRefObject<HTMLElement>;
 }
 export function useInfiniteScroll({
     callback,
@@ -14,7 +14,9 @@ export function useInfiniteScroll({
     // eslint-disable-next-line consistent-return
     useEffect(() => {
         const triggerElement = triggerRef.current; // замыкание значений внутри функции
-        const wrapperElement = wrapperRef.current;
+        const wrapperElement = wrapperRef?.current || null; // если нету то скрол берет 1 элемент за основу нужно
+        // когда скролить не нужно, а догружать элементы надо
+
         let observer: IntersectionObserver | null = null;
         if (callback) {
             const options = {

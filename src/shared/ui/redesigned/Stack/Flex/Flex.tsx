@@ -2,11 +2,11 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import cls from './Flex.module.scss';
 
-type FlexJustify = 'start' | 'center' | 'end' | 'between';
-type FlexAlign = 'start' | 'center' | 'end';
-type FlexDirection = 'row' | 'column';
-type FlexGap = '4' | '8' | '16' | '32';
-type DiveProps = DetailedHTMLProps<
+export type FlexJustify = 'start' | 'center' | 'end' | 'between';
+export type FlexAlign = 'start' | 'center' | 'end';
+export type FlexDirection = 'row' | 'column';
+export type FlexGap = '4' | '8' | '16' | '32';
+export type DiveProps = DetailedHTMLProps<
     HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
 >;
