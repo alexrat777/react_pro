@@ -1,7 +1,7 @@
 .menu {
     background: var(--dark-bg-redesigned);
     position: absolute;
-    z-index: var(--dropdown-z-index);
+    z-index: 10000;
     flex-direction: column;
     display: flex;
 }

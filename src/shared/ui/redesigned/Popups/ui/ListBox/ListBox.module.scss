@@ -1,16 +1,17 @@
+.trigger {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
 .options {
     background: var(--dark-bg-redesigned);
     position: absolute;
-    z-index: var(--dropdown-z-index);
+    z-index: 10000;
     border-radius: 12px;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-    min-width: max-content;
-
-    // box-shadow: 4px 4px 8px var(--listbox-bg);
-
-    .top {
-        bottom: 100%;
-    }
+    box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
 }
 
 .item {
@@ -19,8 +20,4 @@
 
 .selected {
     background: var(--light-bg-redesigned);
-}
-
-.IconSelected {
-    fill: var(--icon-redesigned);
 }

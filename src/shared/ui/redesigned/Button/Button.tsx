@@ -5,6 +5,7 @@ import cls from './Button.module.scss';
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     /**
@@ -26,11 +27,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     /**
      * Содержимое кнопки
      */
-    children: ReactNode;
+    children?: ReactNode;
     /**
      * Увеличивает кнопку на всю свободную ширину
      */
     fullWidth?: boolean;
+
+    addonLeft?: ReactNode;
+    addonRight?: ReactNode;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -39,25 +43,35 @@ export const Button = memo((props: ButtonProps) => {
         children,
         variant = 'outline',
         square,
-        size = 'm',
         disabled,
         fullWidth,
+        size = 'm',
+        addonLeft,
+        addonRight,
         ...otherProps
     } = props;
+
     const mods: Mods = {
         [cls.square]: square,
         [cls.disabled]: disabled,
         [cls.fullWidth]: fullWidth,
+        [cls.withAddon]: Boolean(addonLeft) || Boolean(addonRight),
     };
-    const classAdd = [className, cls[variant], cls[size]];
+
     return (
         <button
             type="button"
-            className={classNames(cls.Button, mods, classAdd)}
-            {...otherProps}
+            className={classNames(cls.Button, mods, [
+                className,
+                cls[variant],
+                cls[size],
+            ])}
             disabled={disabled}
+            {...otherProps}
         >
+            <div className={cls.addonLeft}>{addonLeft}</div>
             {children}
+            <div className={cls.addonRight}>{addonRight}</div>
         </button>
     );
 });

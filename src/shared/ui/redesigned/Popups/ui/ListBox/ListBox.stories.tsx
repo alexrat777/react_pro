@@ -31,12 +31,6 @@ Primary.args = {
     items: options,
     value: '1',
 };
-export const readOnly = Template.bind({});
-readOnly.args = {
-    items: options,
-    value: '1',
-    readOnly: true,
-};
 export const noSelect = Template.bind({});
 noSelect.args = {
     items: options,
