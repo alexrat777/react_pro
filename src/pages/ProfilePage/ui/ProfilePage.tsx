@@ -6,7 +6,6 @@ import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { EditableProfileCard } from '@/features/editableProfileCard';
-import { ProfileRating } from '@/features/profileRating';
 
 interface ProfilePageProps {
     className?: string;
@@ -24,7 +23,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         >
             <VStack max gap="16">
                 <EditableProfileCard id={id} />
-                <ProfileRating profileId={id} />
+                {/* <ProfileRating profileId={id} /> */}
             </VStack>
         </Page>
     );
