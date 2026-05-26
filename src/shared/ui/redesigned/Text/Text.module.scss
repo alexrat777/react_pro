@@ -26,7 +26,6 @@
     }
 }
 
-
 .left {
     text-align: left;
 }
@@ -66,5 +65,12 @@
 
     .text {
         font: var(--font-l-redesigned);
+    }
+}
+
+.bold {
+    .title,
+    .text {
+        font-weight: 700;
     }
 }
