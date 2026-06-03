@@ -5,6 +5,7 @@ import cls from './Flex.module.scss';
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
+export type FlexWrap = 'nowrap' | 'wrap';
 export type FlexGap = '4' | '8' | '16' | '24' | '32';
 export type DiveProps = DetailedHTMLProps<
     HTMLAttributes<HTMLDivElement>,
@@ -17,6 +18,7 @@ export interface FlexProps extends DiveProps {
     justify?: FlexJustify;
     align?: FlexAlign;
     direction?: FlexDirection;
+    warp?: FlexWrap;
     gap?: FlexGap;
     max?: boolean;
 }
@@ -49,6 +51,7 @@ export const Flex = (props: FlexProps) => {
         justify = 'start',
         direction = 'row',
         align = 'center',
+        warp = 'nowrap',
         gap,
         max,
         ...otherProps
@@ -59,6 +62,7 @@ export const Flex = (props: FlexProps) => {
         justifyClasses[justify],
         alignClasses[align],
         directionClasses[direction],
+        cls[warp],
         gap && gapClasses[gap],
     ];
     const mods = {

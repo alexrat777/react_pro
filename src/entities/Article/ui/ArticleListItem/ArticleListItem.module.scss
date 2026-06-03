@@ -103,3 +103,13 @@
         text-overflow: ellipsis;
     }
 }
+
+.ArticleListItemRedesigned {
+    &.BIG {
+        width: 100%;
+    }
+
+    &.SMALL {
+        height: 350px;
+    }
+}

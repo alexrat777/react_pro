@@ -69,6 +69,7 @@ module.exports = {
                     'color',
                     'variant',
                     'size',
+                    'warp',
                 ],
             },
         ],
