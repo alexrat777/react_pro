@@ -26,7 +26,7 @@ interface InputProps extends HTMLInputProps {
  * Устарел, используем новые из папки redesigned
  * @deprecated
  */
-const Input = memo((props: InputProps) => {
+export const Input = memo((props: InputProps) => {
     const {
         className,
         value,
@@ -93,5 +93,3 @@ const Input = memo((props: InputProps) => {
         </div>
     );
 });
-
-export default Input;

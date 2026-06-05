@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import Input from '@/shared/ui/deprecated/Input';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import DynamicModuleLoader, {

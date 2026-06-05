@@ -4,9 +4,9 @@ import {
     useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
 import { classNames } from '../../../lib/helpers/classNames/classNames';
-import { Overlay } from '../../redesigned/Overlay/Overlay';
+import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
-import Portal from '../../redesigned/Portal/Portal';
+import Portal from '../Portal/Portal';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {
@@ -17,10 +17,7 @@ interface DrawerProps {
     lazy?: boolean;
 }
 const height = window.innerHeight - 100;
-/**
- * Устарел, используем новые из папки redesigned
- * @deprecated
- */
+
 export const DrawerContent = memo((props: DrawerProps) => {
     // хук для подтягивания библиотеки
     const { Spring, Gesture } = useAnimationLibs();
@@ -118,10 +115,7 @@ const DrawerAsync = (props: DrawerProps) => {
 
     return <DrawerContent {...props} />;
 };
-/**
- * Устарел, используем новые из папки redesigned
- * @deprecated
- */
+
 export const Drawer = (props: DrawerProps) => {
     return (
         <AnimationProvider>

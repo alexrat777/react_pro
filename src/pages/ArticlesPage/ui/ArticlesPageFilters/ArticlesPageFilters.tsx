@@ -20,7 +20,7 @@ import cls from './ArticlesPageFilters.module.scss';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
-import Input from '@/shared/ui/deprecated/Input';
+import { Input } from '@/shared/ui/deprecated/Input';
 
 interface ArticlesPageFiltersProps {
     className?: string;
