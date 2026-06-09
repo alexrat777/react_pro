@@ -24,6 +24,9 @@ const ThemeProvider = (props: ThemeProviderProps) => {
             setIsThemeInited(true);
         }
     }, [defaultTheme, isThemeInited]);
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme]);
     //    useMemo нужно для оптимизации памяти меняется только когда теме меняется
     const defaultProps = useMemo(
         () => ({
