@@ -11,6 +11,7 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 
@@ -19,6 +20,7 @@ const App = () => {
     // инициализация авторизации из локалстораджа
     const dispatch = useAppDispatch();
     const initedAuth = useSelector(getUserInit);
+    const toolbar = useAppToolbar();
     useEffect(() => {
         //    dispatch(userActions.initAuthData());
         dispatch(initAuthData());
@@ -57,6 +59,7 @@ const App = () => {
                             header={<Navbar />}
                             content={<AppRouter />}
                             sidebar={<Sidebar />}
+                            toolbar={toolbar}
                         />
                     </Suspense>
                 </div>
