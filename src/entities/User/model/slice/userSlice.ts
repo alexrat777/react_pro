@@ -1,5 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import {
+    LOCAL_STORAGE_LAST_DESIGN_THEME_KEY,
+    USER_LOCALSTORAGE_KEY,
+} from '@/shared/const/localstorage';
 import { User, UserSchema } from '../types/user';
 import { setFeatureFlags } from '@/shared/lib/features';
 import { saveJsonSettings } from '../services/saveJsonSettings';
@@ -13,10 +16,14 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setAuthData: (state, action: PayloadAction<User>) => {
-            state.authData = action.payload;
-            setFeatureFlags(action.payload.features);
-            localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id); // тут должен быть токен
+        setAuthData: (state, { payload }: PayloadAction<User>) => {
+            state.authData = payload;
+            setFeatureFlags(payload.features);
+            localStorage.setItem(USER_LOCALSTORAGE_KEY, payload.id); // тут должен быть токен
+            localStorage.setItem(
+                LOCAL_STORAGE_LAST_DESIGN_THEME_KEY,
+                payload?.features?.isAppRedesigned ? 'new' : 'old',
+            ); // тут должен быть токен
         },
         // initAuthData: (state) => {  // ненужна перешли на initAuthData на работе с бэком
         //     const jsonUser = localStorage.getItem(USER_LOCALSTORAGE_KEY);

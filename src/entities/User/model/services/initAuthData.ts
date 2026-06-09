@@ -2,7 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { getUserDataByIdQuery } from '../../api/userApi';
 import { User } from '../types/user';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
+import {
+    LOCAL_STORAGE_LAST_DESIGN_THEME_KEY,
+    USER_LOCALSTORAGE_KEY,
+} from '@/shared/const/localstorage';
 // ассинхронный запрос Thunk для инициализации данных о залогиненом пользователе
 export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
     'user/initAuthData',
@@ -19,6 +22,11 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
                 getUserDataByIdQuery(userId),
             ).unwrap(); // .unwrap()Функция в запросе RTK — этоИспользуется для доступа к необработанным данным ответа выполненного промиса или для явного генерирования ошибки в случае отклонения запроса.
 
+            // сохнаряем в локальном хранилище тип дизайна последнего
+            localStorage.setItem(
+                LOCAL_STORAGE_LAST_DESIGN_THEME_KEY,
+                response?.features?.isAppRedesigned ? 'new' : 'old',
+            );
             return response; // user
         } catch (e) {
             console.log(e);

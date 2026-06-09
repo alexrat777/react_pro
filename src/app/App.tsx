@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 
@@ -23,7 +24,17 @@ const App = () => {
         dispatch(initAuthData());
     }, [dispatch]);
     if (!initedAuth) {
-        return <PageLoader />;
+        return (
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <div className={classNames('app_redesigned', {}, [theme])}>
+                        <AppLoaderLayout />
+                    </div>
+                }
+                off={<PageLoader />}
+            />
+        );
     }
     return (
         <ToggleFeatures
