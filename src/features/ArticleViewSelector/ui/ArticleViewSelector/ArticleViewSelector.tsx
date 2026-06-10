@@ -63,6 +63,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                     <HStack gap="8">
                         {viewTypes.map((viewTypeElem) => (
                             <Icon
+                                key={viewTypeElem.view}
                                 Svg={viewTypeElem.icon}
                                 className={classNames('', {
                                     [cls.notSelected]:

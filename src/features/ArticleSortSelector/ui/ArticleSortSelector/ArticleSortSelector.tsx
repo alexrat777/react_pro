@@ -20,7 +20,7 @@ interface ArticleSortSelectorProps {
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     const { className, sort, order, onChangeSort, onChangeOrder } = props;
-    const { t } = useTranslation('article');
+    const { t } = useTranslation('articles');
     // описываем массивы сортировок
     const orderOptions = useMemo<SelectOption<SortOrder>[]>(
         () => [
@@ -73,7 +73,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                     )}
                 >
                     <VStack gap="8">
-                        <Text title={t('Сортировать по:')} />
+                        <Text title={`${t('Сортировать по')}:`} />
                         <ListBox
                             items={sortFieldOptions}
                             value={sort}
@@ -95,7 +95,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                 >
                     <Select<ArticleSortField> // указать дженерик напрямую
                         options={sortFieldOptions}
-                        label={t('Сортировать ПО')}
+                        label={t('Сортировать по')}
                         value={sort}
                         onChange={onChangeSort}
                     />
