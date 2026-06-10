@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/helpers/classNames/classNames';
 import { AppRouter } from './providers/router';
@@ -12,10 +12,11 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 // 2 шаг для router<Routes> <Route path={'/'} element={<MainPage />}/> </Routes>
 // 3 шаг для router Link to={'/'}>Главная</Link>
 
-const App = () => {
+const App = memo(() => {
     const { theme } = useTheme();
     // инициализация авторизации из локалстораджа
     const dispatch = useAppDispatch();
@@ -66,6 +67,16 @@ const App = () => {
             }
         />
     );
-};
-
-export default App;
+});
+// вынесем в отдельный хэлпер
+// const withTheme = (Component: React.ComponentType) => {
+//     return () => {
+//         const { theme: defaultTheme } = useJsonSettings();
+//         return (
+//             <ThemeProvider initialTheme={defaultTheme}>
+//                 <Component />
+//             </ThemeProvider>
+//         );
+//     };
+// };
+export default withTheme(App);

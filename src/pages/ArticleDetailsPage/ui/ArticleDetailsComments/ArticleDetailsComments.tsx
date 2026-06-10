@@ -21,8 +21,6 @@ interface ArticleDetailsCommentsProps {
     className?: string;
     id?: string;
 }
-SkeletonDeprecated;
-SkeletonRedesigned;
 export const ArticleDetailsComments = memo(
     (props: ArticleDetailsCommentsProps) => {
         const { className, id } = props;

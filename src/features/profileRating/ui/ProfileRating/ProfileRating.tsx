@@ -38,7 +38,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
                 });
             } catch (e) {
                 // handle error
-                console.error(e);
+                // console.error(e);
             }
         },
         [profileId, rateProfileMutation, userData?.id],

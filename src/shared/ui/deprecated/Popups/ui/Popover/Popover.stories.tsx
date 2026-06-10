@@ -28,26 +28,26 @@ Primary.args = {
     children: <div>children children children children</div>,
 };
 
-export const topRight = Template.bind({});
-topRight.args = {
+export const TopRight = Template.bind({});
+TopRight.args = {
     trigger: <Button>Open</Button>,
     children: <div>children children children children</div>,
     direction: 'top right',
 };
-export const topLeft = Template.bind({});
-topLeft.args = {
+export const TopLeft = Template.bind({});
+TopLeft.args = {
     trigger: <Button>Open</Button>,
     children: <div>children children children children</div>,
     direction: 'top left',
 };
-export const bottomLeft = Template.bind({});
-bottomLeft.args = {
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
     trigger: <Button>Open</Button>,
     children: <div>children children children children</div>,
     direction: 'bottom left',
 };
-export const bottomRight = Template.bind({});
-bottomRight.args = {
+export const BottomRight = Template.bind({});
+BottomRight.args = {
     trigger: <Button>Open</Button>,
     children: <div>children children children children</div>,
     direction: 'bottom right',

@@ -29,7 +29,7 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
             );
             return response; // user
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return rejectWithValue('error'); // rejectValue:string
         }
     },

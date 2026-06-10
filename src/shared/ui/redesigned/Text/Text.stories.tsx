@@ -31,12 +31,12 @@ CenterText.args = {
     text: 'text Text',
     align: 'center',
 };
-export const onlyTitle = Template.bind({});
-onlyTitle.args = {
+export const OnlyTitle = Template.bind({});
+OnlyTitle.args = {
     title: 'title Text',
 };
-export const onlyText = Template.bind({});
-onlyText.args = {
+export const OnlyText = Template.bind({});
+OnlyText.args = {
     text: 'text Text',
 };
 export const Dark = Template.bind({});
@@ -46,37 +46,37 @@ Dark.args = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTitleDark = Template.bind({});
-onlyTitleDark.args = {
+export const OnlyTitleDark = Template.bind({});
+OnlyTitleDark.args = {
     title: 'title Text',
 };
-onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTextDark = Template.bind({});
-onlyTextDark.args = {
+export const OnlyTextDark = Template.bind({});
+OnlyTextDark.args = {
     text: 'text Text',
 };
-onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
-export const accent = Template.bind({});
-accent.args = {
+OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Accent = Template.bind({});
+Accent.args = {
     title: 'title Text',
     text: 'text Text',
     variant: 'accent',
 };
-export const sizeL = Template.bind({});
-sizeL.args = {
+export const SizeL = Template.bind({});
+SizeL.args = {
     title: 'title Text',
     text: 'text Text',
     size: 'l',
 };
-export const sizeM = Template.bind({});
-sizeM.args = {
+export const SizeM = Template.bind({});
+SizeM.args = {
     title: 'title Text',
     text: 'text Text',
     size: 'm',
 };
-export const sizeS = Template.bind({});
-sizeS.args = {
+export const SizeS = Template.bind({});
+SizeS.args = {
     title: 'title Text',
     text: 'text Text',
     size: 's',

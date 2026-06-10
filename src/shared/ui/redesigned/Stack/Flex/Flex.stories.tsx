@@ -10,6 +10,7 @@ export default {
     },
 } as ComponentMeta<typeof Flex>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Flex> = (args) => <Flex {...args} />;
 
 export const Row = Template.bind({});

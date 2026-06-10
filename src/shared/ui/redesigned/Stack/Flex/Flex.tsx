@@ -69,6 +69,7 @@ export const Flex = (props: FlexProps) => {
         [cls.max]: max,
     };
     return (
+        // eslint-disable-next-line react/jsx-props-no-spreading
         <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
             {children}
         </div>

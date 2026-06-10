@@ -31,52 +31,52 @@ Primary.args = {
     items: options,
     value: '1',
 };
-export const readOnly = Template.bind({});
-readOnly.args = {
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
     items: options,
     value: '1',
     readOnly: true,
 };
-export const noSelect = Template.bind({});
-noSelect.args = {
+export const NoSelect = Template.bind({});
+NoSelect.args = {
     items: options,
     defaultValue: 'Select value',
     value: undefined,
 };
-export const withLabel = Template.bind({});
-withLabel.args = {
+export const WithLabel = Template.bind({});
+WithLabel.args = {
     items: options,
     defaultValue: 'Select value',
     value: undefined,
     label: 'Label',
 };
 
-export const topRight = Template.bind({});
-topRight.args = {
+export const TopRight = Template.bind({});
+TopRight.args = {
     items: options,
     defaultValue: 'Select value',
     value: undefined,
     label: 'Label',
     direction: 'top right',
 };
-export const topLeft = Template.bind({});
-topLeft.args = {
+export const TopLeft = Template.bind({});
+TopLeft.args = {
     items: options,
     defaultValue: 'Select value',
     value: undefined,
     label: 'Label',
     direction: 'top left',
 };
-export const bottomLeft = Template.bind({});
-bottomLeft.args = {
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
     items: options,
     defaultValue: 'Select value',
     value: undefined,
     label: 'Label',
     direction: 'bottom left',
 };
-export const bottomRight = Template.bind({});
-bottomRight.args = {
+export const BottomRight = Template.bind({});
+BottomRight.args = {
     items: options,
     defaultValue: 'Select value',
     value: undefined,

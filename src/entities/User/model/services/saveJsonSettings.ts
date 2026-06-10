@@ -33,7 +33,7 @@ export const saveJsonSettings = createAsyncThunk<
         }
         return response.jsonSettings;
     } catch (e) {
-        console.log(e);
+        // console.log(e);
         return rejectWithValue('error'); // rejectValue:string
     }
 });

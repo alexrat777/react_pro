@@ -33,7 +33,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const { t } = useTranslation('article');
     const dispatch = useAppDispatch();
     const articleItem = useArticleItemById('2');
-    console.log(articleItem);
+    // console.log(articleItem);
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {

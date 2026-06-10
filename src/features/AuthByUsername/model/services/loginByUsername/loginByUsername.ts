@@ -31,7 +31,7 @@ export const loginByUsername = createAsyncThunk<
         dispatch(userActions.setAuthData(response.data)); // сохранение данных о пользователе
         return response.data;
     } catch (e) {
-        console.log(e);
+        // console.log(e);
         return rejectWithValue('error'); // rejectValue:string
     }
 });

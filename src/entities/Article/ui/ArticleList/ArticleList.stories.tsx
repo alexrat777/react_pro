@@ -88,15 +88,15 @@ const Template: ComponentStory<typeof ArticleList> = (args) => (
     <ArticleList {...args} />
 );
 
-export const isLoadingBig = Template.bind({});
-isLoadingBig.args = {
+export const IsLoadingBig = Template.bind({});
+IsLoadingBig.args = {
     isLoading: true,
     articles: [],
     view: ArticleView.BIG,
 };
 
-export const isLoadingSmall = Template.bind({});
-isLoadingSmall.args = {
+export const IsLoadingSmall = Template.bind({});
+IsLoadingSmall.args = {
     isLoading: true,
     articles: [],
     view: ArticleView.SMALL,

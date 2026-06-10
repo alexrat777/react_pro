@@ -37,26 +37,26 @@ LinkHref.args = {
     items,
 };
 
-export const topRight = Template.bind({});
-topRight.args = {
+export const TopRight = Template.bind({});
+TopRight.args = {
     trigger: <Button>Open</Button>,
     items,
     direction: 'top right',
 };
-export const topLeft = Template.bind({});
-topLeft.args = {
+export const TopLeft = Template.bind({});
+TopLeft.args = {
     trigger: <Button>Open</Button>,
     items,
     direction: 'top left',
 };
-export const bottomLeft = Template.bind({});
-bottomLeft.args = {
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
     trigger: <Button>Open</Button>,
     items,
     direction: 'bottom left',
 };
-export const bottomRight = Template.bind({});
-bottomRight.args = {
+export const BottomRight = Template.bind({});
+BottomRight.args = {
     trigger: <Button>Open</Button>,
     items,
     direction: 'bottom right',

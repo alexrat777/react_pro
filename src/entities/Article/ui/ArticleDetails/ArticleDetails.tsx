@@ -38,7 +38,7 @@ interface ArticleDetailsProps {
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
 };
-SkeletonRedesigned;
+
 const Deprecated = () => {
     const article = useSelector(getArticleDetailsData);
     return (
